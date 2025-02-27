@@ -1,0 +1,75 @@
+.DatosAutor{
+ display: flex;
+ gap: 20px;
+}
+
+
+.Preparacion{
+color: white;
+margin: 10px;
+padding: 20px;
+background-color: #A3B18A; /* Fondo solo para la lista */
+padding: 10px; /* Añade un poco de padding para que se vea mejor */
+border-radius: 8px; /* Opcional: bordes redondeados */
+list-style-position: inside;
+}
+
+.ContainerTitulo {
+    width: 100%;
+    text-align: center; /* Centra la imagen horizontalmente */
+}
+
+.ContainerIngredienteTexto{
+    position:relative;
+    margin-left: 40%;
+    font-size: 2em;
+    justify-content: center;
+}
+
+.ContainerTitulo {
+    font: 1.2em sans-serif;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ImgSuperior {
+    display: block; /* Asegura que la imagen se comporte como un bloque */
+    margin: 20px auto; /* Centra la imagen horizontalmente y añade margen vertical */
+    width: 90%;
+    max-width: 100%; /* Evita que la imagen se desborde en pantallas pequeñas */
+    border-radius: 10%;
+}
+
+.Video{
+    padding:20px
+}
+
+.Ingredientes {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 10px;
+}
+
+.ListaIngredientes {
+    color: white;
+    width: 40%;
+    background-color: #A3B18A; /* Fondo solo para la lista */
+    padding: 10px; /* Añade un poco de padding para que se vea mejor */
+    border-radius: 8px; /* Opcional: bordes redondeados */
+    list-style-position: inside;
+}
+
+.ImgIngredientes {
+    width: 50%;
+    max-height: 40%;
+    background-color: #A3B18A; /* Fondo solo para la imagen */
+    padding: 10px; /* Añade un poco de padding para que se vea mejor */
+    border-radius: 10%; /* Opcional: bordes redondeados */
+}
+
+body {
+    background-color: white;
+}
