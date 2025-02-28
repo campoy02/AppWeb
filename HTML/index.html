@@ -24,7 +24,7 @@
         <div class="nav-links">
             <a href="#">Inicio</a>
             <a href="#">Mi Perfil</a>
-            <a href="#">Subir RecetA</a>
+            <a href="#">Subir Receta</a>
         </div>
         <div class="search-box">
             <input type="text" placeholder="Hey, ¿Listo para cocinar?" class="search-input">
@@ -39,6 +39,135 @@
             <span class="hero-subtitle">Recetitas Blog</span>
             <h1 class="hero-title">Bienvenido a tu <br> Blog de Recetas</h1>
             <img src="/Imagenes/logo.png" alt="Logo Recetitas" class="hero-logo">
+        </div>
+    </section>
+
+    <section class="categorias">
+        <h2>Categorías</h2>
+        <div class="menu-categorias">
+            <button class="categoria active" data-categoria="desayunos">Desayunos</button>
+            <button class="categoria" data-categoria="comidas">Comidas</button>
+            <button class="categoria" data-categoria="cenas">Cenas</button>
+            <button class="categoria" data-categoria="bebidas">Bebidas</button>
+            <button class="categoria" data-categoria="postres">Postres</button>
+            <button class="categoria" data-categoria="antojitos">Antojitos</button>
+        </div>
+
+        <div class="contenedor-recetas">
+            <!-- Contenedor de imágenes que cambiarán según la categoría -->
+            <div class="grid-recetas" id="desayunos">
+                <img src="/Imagenes/filete.jpg" alt="Desayuno 1">
+                <img src="/Imagenes/taco.jpg" alt="Desayuno 2">
+                <img src="/Imagenes/pollo2.jpg" alt="Desayuno 3">
+                <img src="/Imagenes/pechuga.jpg" alt="Desayuno 4">
+                <img src="/Imagenes/pollo3.jpg" alt="Desayuno 5">
+                <img src="/Imagenes/pozole.jpg" alt="Desayuno 6">
+                <img src="/Imagenes/ramen.jpg" alt="Desayuno 7">
+                <img src="/Imagenes/Pollo9.jpg" alt="Desayuno 8">
+                <img src="/Imagenes/pollo2.jpg" alt="Desayuno 9">
+                <img src="/Imagenes/pollo6.jpg" alt="Desayuno 10">
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="recetas-rapidas">
+        <h2>Recetas Rápidas</h2>
+        <div class="recetas-container">
+            <div class="receta">
+                <img src="/Imagenes/filete.jpg" alt="Filete Asado">
+                <div class="receta-info">
+                    <h3>Filete Asado</h3>
+                    <hr>
+                    <a href="#" class="btn-receta">Ver Receta</a>
+                </div>
+            </div>
+
+            <div class="receta">
+                <img src="/Imagenes/lasaña.jpg" alt="Lasaña Clásica">
+                <div class="receta-info">
+                    <h3>Lasaña Clásica</h3>
+                    <hr>
+                    <a href="#" class="btn-receta">Ver Receta</a>
+                </div>
+            </div>
+
+            <div class="receta">
+                <img src="/Imagenes/ramen.jpg" alt="Ramen Clásico">
+                <div class="receta-info">
+                    <h3>Ramen Clásico</h3>
+                    <hr>
+                    <a href="#" class="btn-receta">Ver Receta</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mejor-calificados">
+        <h2>Mejor Calificados</h2>
+        <div class="calificados-container">
+
+            <div class="calificado">
+                <div class="calificado-img">
+                    <span class="dificultad facil">Nivel: Fácil</span>
+                    <img src="/Imagenes/taco.jpg" alt="Tacos Mexicanos">
+                </div>
+                <div class="calificado-info">
+                    <div class="estrellas">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+                    <a href="#" class="titulo-receta">Tacos Mexicanos</a>
+                    <p>Receta elaborada por: <a href="#" class="autor">Gordon Ramsay</a></p>
+                    <span class="rating">98%</span>
+                </div>
+            </div>
+
+            <div class="calificado">
+                <div class="calificado-img">
+                    <span class="dificultad dificil">Nivel: Difícil</span>
+                    <img src="/Imagenes/pozole.jpg" alt="Pozole Mexicano">
+                </div>
+                <div class="calificado-info">
+                    <div class="estrellas">
+                        ⭐⭐⭐⭐☆
+                    </div>
+                    <a href="#" class="titulo-receta">Pozole Mexicano</a>
+                    <p>Receta elaborada por: <a href="#" class="autor">La mera Mexicana</a></p>
+                    <span class="rating">91%</span>
+                </div>
+            </div>
+
+            <div class="calificado">
+                <div class="calificado-img">
+                    <span class="dificultad intermedio">Nivel: Intermedio</span>
+                    <img src="/Imagenes/pechuga.jpg" alt="Pechuga Empanizada">
+                </div>
+                <div class="calificado-info">
+                    <div class="estrellas">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+                    <a href="#" class="titulo-receta">Pechuga Empanizada</a>
+                    <p>Receta elaborada por: <a href="#" class="autor">La capital</a></p>
+                    <span class="rating">97%</span>
+                </div>
+            </div>
+
+            <div class="calificado">
+                <div class="calificado-img">
+                    <span class="dificultad facil">Nivel: Fácil</span>
+                    <img src="/Imagenes/brownies.jpg" alt="Brownies de Chocolate">
+                </div>
+                <div class="calificado-info">
+                    <div class="estrellas">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+                    <a href="#" class="titulo-receta">Brownies de Chocolate</a>
+                    <p>Receta elaborada por: <a href="#" class="autor">Postres El Tío Ben</a></p>
+                    <span class="rating">95%</span>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -70,7 +199,7 @@
         <p>Encuentranos en:</p>
         <p>Rio Pantitlan 4632, Colonia Americas 25843, Méxicali, Baja California, México.</p>
         <p>Contacto: +52 686 323 7433</p>
-        <p><a class = "HipertextoFooter" href="../HTML/Formulario.html">Manda un mensaje a los desarrolladores</a></p>
+        <p><a class="HipertextoFooter" href="../HTML/Formulario.html">Manda un mensaje a los desarrolladores</a></p>
     </div>
 </footer>
 
