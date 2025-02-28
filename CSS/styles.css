@@ -85,18 +85,31 @@ body {
 .search-box {
     display: flex;
     align-items: center;
-    background: rgba(255, 255, 255, 0.3);
-    padding: 5px 15px;
+    background: rgba(255, 255, 255, 0.9);
+    /* Fondo visible */
+    padding: 8px 15px;
     border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    width: 280px;
+    /* Ajuste del ancho */
 }
 
 .search-input {
+    flex-grow: 1;
+    /* Asegura que el input ocupe todo el espacio */
     border: none;
     background: none;
     font-family: 'Lobster', cursive;
     font-size: 1em;
-    color: white;
+    color: black;
     outline: none;
+    padding: 5px;
+    min-width: 200px;
+    /* Asegura que el input tenga espacio */
+}
+
+.search-input::placeholder {
+    color: rgba(0, 0, 0, 0.6);
 }
 
 .search-btn {
@@ -104,8 +117,13 @@ body {
     background: none;
     font-size: 1.2em;
     cursor: pointer;
-    color: white;
+    color: black;
+    padding-left: 10px;
 }
+
+
+
+
 
 .hero-section {
     position: relative;

@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="../CSS/PieDePagina.css">
     <link rel="stylesheet" href="../CSS/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
+
     <header class="header">
 
         <div class="banner">
@@ -26,12 +28,14 @@
             <a href="#">Mi Perfil</a>
             <a href="#">Subir Receta</a>
         </div>
-        <div class="search-box">
-            <input type="text" placeholder="Hey, ¿Listo para cocinar?" class="search-input">
-            <button class="search-btn">
-                🔍
-            </button>
-        </div>
+
+        <form action="Resultados.html" method="get">
+            <div class="search-box">
+                <input type="text" name="search" class="search-input" placeholder="Buscar...">
+                <button type="submit" class="search-btn">🔍</button>
+            </div>
+        </form>
+
     </nav>
 
     <section class="hero-section">
@@ -80,7 +84,7 @@
                 <div class="receta-info">
                     <h3>Filete Asado</h3>
                     <hr>
-                    <a href="#" class="btn-receta">Ver Receta</a>
+                    <a href="Recetas.html" class="btn-receta">Ver Receta</a>
                 </div>
             </div>
 
@@ -89,7 +93,7 @@
                 <div class="receta-info">
                     <h3>Lasaña Clásica</h3>
                     <hr>
-                    <a href="#" class="btn-receta">Ver Receta</a>
+                    <a href="Recetas.html" class="btn-receta">Ver Receta</a>
                 </div>
             </div>
 
@@ -98,7 +102,7 @@
                 <div class="receta-info">
                     <h3>Ramen Clásico</h3>
                     <hr>
-                    <a href="#" class="btn-receta">Ver Receta</a>
+                    <a href="Recetas.html" class="btn-receta">Ver Receta</a>
                 </div>
             </div>
         </div>
