@@ -22,6 +22,7 @@ footer {
     box-sizing: border-box; /* Incluye el padding en el ancho y alto */
     font-style: oblique;
     font-weight: bold;
+    margin-top: 10px;
 }
 
 /* Sección izquierda: "¿Quiénes somos?" */
