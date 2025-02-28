@@ -5,7 +5,7 @@
 
 
 .Preparacion{
-font-size: 1.1em;
+font-size: 1.5em;
 color: white;
 margin: 10px;
 padding: 20px;
@@ -37,21 +37,25 @@ list-style-position: inside;
 .ImgSuperior {
     display: block; /* Asegura que la imagen se comporte como un bloque */
     margin: 20px auto; /* Centra la imagen horizontalmente y añade margen vertical */
+    height: 50%;
     width: 90%;
     max-width: 100%; /* Evita que la imagen se desborde en pantallas pequeñas */
     border-radius: 10%;
 }
 
 .Video{
-    padding:20px
+    padding:20px;
+    
 }
 
 .Ingredientes {
-    font-size: 1.2em;
+    font-size: 2em;
     display: flex;
     flex-wrap: wrap;
     padding: 20px;
     gap: 10px;
+    flex-wrap: wrap 
+
 }
 
 .ListaIngredientes {
