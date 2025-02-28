@@ -5,6 +5,7 @@
 
 
 .Preparacion{
+font-size: 1.1em;
 color: white;
 margin: 10px;
 padding: 20px;
@@ -22,7 +23,6 @@ list-style-position: inside;
 .ContainerIngredienteTexto{
     position:relative;
     margin-left: 40%;
-    font-size: 2em;
     justify-content: center;
 }
 
@@ -47,6 +47,7 @@ list-style-position: inside;
 }
 
 .Ingredientes {
+    font-size: 1.2em;
     display: flex;
     flex-wrap: wrap;
     padding: 20px;

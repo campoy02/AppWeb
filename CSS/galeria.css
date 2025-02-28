@@ -107,8 +107,8 @@ img:hover {
 }
 
 img {
-    width: 200px;
-    height: 200px;
+    width: 50vh;
+    height: 50vh;
     max-width: 100%;
     max-height: 100%;
     border-radius: 25px;
