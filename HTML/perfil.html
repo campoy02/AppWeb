@@ -1,18 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/PieDePagina.css">
-    <title>Document</title>
+    <title>Perfil de Usuario</title>
+    <link rel="stylesheet" href="../CSS/styleperfil.css">
+
+    <header class="header">
+ <nav class="nav-bar">
+        <div class="nav-links">
+            <a href="../HTML/index,html">Inicio</a>
+            <a href="../HTML/Historial.html">Mi Historial</a>
+            <a href="#">Editar Pefil</a>
+        </div>
+        <div class="search-box">
+            <input type="text" placeholder="Hey, ¿Listo para cocinar?" class="search-input">
+            <button class="search-btn">
+                🔍
+            </button>
+        </div>
+    </nav>
+
+    </header>
+
+   
+
 </head>
 
-<body>
-    <p>PERFIL
-    <p>
-</body>
 
+<body>
+
+
+    <div class="profile-container">
+        <!-- Portada -->
+        <div class="portada">
+            <img src="../Imagenes/burgers.png" alt="Imagen de portada">
+            <div class="calificacion">⭐⭐⭐⭐</div>
+        </div>
+
+        <!-- Sección de Foto de Perfil y Nombre -->
+        <div class="perfil">
+            <div class="foto-perfil">
+                <img src="../Imagenes/chef.png" alt="Foto de perfil">
+            </div>
+            <div class="nombre-usuario">
+                <h2>Pedrito Chef</h2>
+            </div>
+        </div>
+
+        <!-- Información del usuario -->
+        <div class="informacion">
+            <h2>Mi información</h2>
+            <h3>Soy un principiante en la cocina pero ocupo aprender para sobrevivir a la vida adulta.</h3>
+        </div>
+
+
+
+        <!-- Contenedor Principal -->
+        <div class="contenido-perfil">
+
+        <div class="separador"></div>            
+            <!-- Sección de Actividad Reciente -->
+            <div class="galeria">
+                <h2>Actividad Reciente</h2>
+                <div class="imagenes">
+                    <img src="../Imagenes/chilerelleno.jpeg" alt="Actividad 1">
+                    <img src="../Imagenes/comidaespanola.jpg" alt="Actividad 2">
+                    <img src="../Imagenes/pizza.png" alt="Actividad 3">
+                </div>
+            </div>
+
+            <!-- Sección de Mis Recetas Creadas -->
+            <div class="galeria">
+                <h2>Mis Recetas Creadas</h2>
+                <div class="imagenes">
+                    <img src="../Imagenes/salmon.jpg" alt="Receta 1">
+                    <img src="../Imagenes/espageto.jpg" alt="Receta 2">
+                    <img src="../Imagenes/tacos.jpg" alt="Receta 3">
+                </div>
+            </div>
+
+            <!-- Botón para subir una receta -->
+            <div class="subir-receta">
+                <button>Subir una Receta</button>
+            </div>
+        </div>
+
+    </div>
 <footer>
     <div class="pdpIzq">
         <p>¿Quienes somos?</p>
@@ -39,8 +113,9 @@
         <p>Encuentranos en:</p>
         <p>Rio Pantitlan 4632, Colonia Americas 25843, Méxicali, Baja California, México.</p>
         <p>Contacto: +52 686 323 7433</p>
-        <p><a class="HipertextoFooter" href="../HTML/Formulario.html">Manda un mensaje a los desarrolladores</a></p>
+        <p><a class = "HipertextoFooter" href="../HTML/Formulario.html">Manda un mensaje a los desarrolladores</a></p>
     </div>
 </footer>
 
+</body>
 </html>
