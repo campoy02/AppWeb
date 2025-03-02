@@ -32,7 +32,7 @@ body {
     position: relative;
     width: 99%;
     height: 370px;
-    background-image: url('/Imagenes/tusrecetas.png');
+    background-image: url('../Imagenes/tusrecetas.png');
     background-size: cover;
     background-position: center;
     display: flex;
