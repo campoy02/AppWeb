@@ -119,12 +119,13 @@ img {
 .container {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 150px;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-bottom: 15%;
+    justify-content: space-between; /* Separa los elementos uniformemente */
     padding: 10px;
-    gap: 20px;
+    gap: 20px; /* Espaciado más pequeño */
+    margin: auto; /* Centrar el contenedor */
+    width: 90%; /* Ajusta el ancho para que no queden bordes sobrantes */
+    margin-bottom: 10%;
+    margin-top: 5%;
 }
 
 /* 4 Columnas */
