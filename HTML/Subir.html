@@ -69,68 +69,92 @@
             </form>
         </div>
     </nav>
-    
-        <!-- Bootstrap JS -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <main class="contenedor-subir">
+        <p>
+        <p>
         <h2>Subir Receta</h2>
+        <p>
+        <p>
 
         <form class="form-subir">
             <div class="form-row">
                 <div class="form-group">
                     <label for="titulo">Título de la receta:</label>
-                    <input type="text" id="titulo" name="titulo" required>
+                    <p>
+                    <p>
+                        <input type="text" id="titulo" name="titulo" required>
                 </div>
                 <div class="form-group">
                     <label for="autor">Autor:</label>
-                    <input type="text" id="autor" name="autor" required>
+                    <p>
+                    <p>
+                        <input type="text" id="autor" name="autor" required>
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group">
                     <label for="personas">Cantidad de personas:</label>
-                    <input type="number" id="personas" name="personas" min="1" required>
+                    <p>
+                    <p>
+                        <input type="number" id="personas" name="personas" min="1" required>
                 </div>
                 <div class="form-group">
                     <label for="tiempo">Tiempo de preparación (minutos):</label>
-                    <input type="number" id="tiempo" name="tiempo" min="1" required>
+                    <p>
+                    <p>
+                        <input type="number" id="tiempo" name="tiempo" min="1" required>
                 </div>
                 <div class="form-group">
                     <label for="dificultad">Nivel de dificultad:</label>
-                    <select id="dificultad" name="dificultad">
-                        <option value="Facil">Fácil</option>
-                        <option value="Intermedio">Intermedio</option>
-                        <option value="Dificil">Difícil</option>
-                    </select>
+                    <p>
+                    <p>
+                        <select id="dificultad" name="dificultad">
+                            <option value="Facil">Fácil</option>
+                            <option value="Intermedio">Intermedio</option>
+                            <option value="Dificil">Difícil</option>
+                        </select>
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="imagen-receta">Imagen de la receta:</label>
-                <input type="file" id="imagen-receta" name="imagen-receta" accept="image/*">
+                <p>
+                <p>
+                    <input type="file" id="imagen-receta" name="imagen-receta" accept="image/*">
             </div>
 
             <div class="form-row">
                 <div class="form-group">
                     <label for="ingredientes">Ingredientes:</label>
-                    <textarea id="ingredientes" name="ingredientes" rows="5" required></textarea>
+                    <p>
+                    <p>
+                        <textarea id="ingredientes" name="ingredientes" rows="5" required></textarea>
                 </div>
                 <div class="form-group">
                     <label for="tips">Tips para el usuario:</label>
-                    <textarea id="tips" name="tips" rows="5"></textarea>
+                    <p>
+                    <p>
+                        <textarea id="tips" name="tips" rows="5"></textarea>
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="imagenes-apoyo">Imágenes de Apoyo:</label>
-                <input type="file" id="imagenes-apoyo" name="imagenes-apoyo" accept="image/*" multiple>
+                <p>
+                <p>
+                    <input type="file" id="imagenes-apoyo" name="imagenes-apoyo" accept="image/*" multiple>
             </div>
 
             <div class="form-group">
                 <label for="preparacion">Preparación:</label>
-                <textarea id="preparacion" name="preparacion" rows="7" required></textarea>
+                <p>
+                <p>
+                    <textarea id="preparacion" name="preparacion" rows="7" required></textarea>
             </div>
 
             <div class="btn-container">
@@ -139,34 +163,36 @@
         </form>
     </main>
 
+    <body>
 
-    <footer>
-        <div class="pdpIzq">
-            <p>¿Quienes somos?</p>
-            <p>Somos un blog público de recetas</p>
-            <p>Nuestro proposito es ayudar a aprender a cocinar a los usuarios</p>
-        </div>
 
-        <div class="pdpcontactanos">
-            <p>Siguenos en redes sociales</p>
-            <div class="pdpcontenedorimagenes">
-                <div class="pdpImg">
-                    <img src="../Imagenes/facebook-new.png" alt="Facebook">
-                </div>
-                <div class="pdpImg">
-                    <img src="../Imagenes/Twitter.png" alt="Twitter">
-                </div>
-                <div class="pdpImg">
-                    <img src="../Imagenes/Instagram.jpg" alt="Twitter">
+        <footer>
+            <div class="pdpIzq">
+                <p>¿Quienes somos?</p>
+                <p>Somos un blog público de recetas</p>
+                <p>Nuestro proposito es ayudar a aprender a cocinar a los usuarios</p>
+            </div>
+
+            <div class="pdpcontactanos">
+                <p>Siguenos en redes sociales</p>
+                <div class="pdpcontenedorimagenes">
+                    <div class="pdpImg">
+                        <img src="../Imagenes/facebook-new.png" alt="Facebook">
+                    </div>
+                    <div class="pdpImg">
+                        <img src="../Imagenes/Twitter.png" alt="Twitter">
+                    </div>
+                    <div class="pdpImg">
+                        <img src="../Imagenes/Instagram.jpg" alt="Twitter">
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="pdpderecha">
-            <p>Encuentranos en:</p>
-            <p>Rio Pantitlan 4632, Colonia Americas 25843, Méxicali, Baja California, México.</p>
-            <p>Contacto: +52 686 323 7433</p>
-            <p><a class="HipertextoFooter" href="../HTML/Formulario.html">Manda un mensaje a los desarrolladores</a>
-            </p>
-        </div>
-    </footer>
+            <div class="pdpderecha">
+                <p>Encuentranos en:</p>
+                <p>Rio Pantitlan 4632, Colonia Americas 25843, Méxicali, Baja California, México.</p>
+                <p>Contacto: +52 686 323 7433</p>
+                <p><a class="HipertextoFooter" href="../HTML/Formulario.html">Manda un mensaje a los desarrolladores</a>
+                </p>
+            </div>
+        </footer>
