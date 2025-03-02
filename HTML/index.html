@@ -14,26 +14,29 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
-     <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Slab:wght@400;700&display=swap"
+        rel="stylesheet">
 
 
 </head>
 
-    <body>
+<body>
 
     <!-- Header -->
     <header class="header position-relative w-100 overflow-hidden" style="height: 300px;">
         <div class="banner position-relative w-100 h-100">
             <!-- Título -->
-            <h1 class="title position-absolute top-0 start-50 translate-middle-x fs-1 fw-bold font-lobster text-center text-brown bg-white bg-opacity-30 p-2 rounded d-flex align-items-center gap-2">
+            <h1
+                class="title position-absolute top-0 start-50 translate-middle-x fs-1 fw-bold font-lobster text-center text-brown bg-white bg-opacity-30 p-2 rounded d-flex align-items-center gap-2">
                 Recetitas <span>Blog</span>
             </h1>
             <!-- Logo -->
-            <img src="../Imagenes/logo.png" alt="Logo Recetitas" class="logo position-absolute top-0 end-0 m-2" style="width: 60px; opacity: 0.8; border-radius: 20%; background: rgba(255, 255, 255, 0.5); padding: 5px;">
+            <img src="../Imagenes/logo.png" alt="Logo Recetitas" class="logo position-absolute top-0 end-0 m-2"
+                style="width: 60px; opacity: 0.8; border-radius: 20%; background: rgba(255, 255, 255, 0.5); padding: 5px;">
         </div>
     </header>
 
@@ -45,7 +48,8 @@
                 <a class="nav-link text-dark fs-5 fw-bold me-4" href="index.html">Inicio</a>
                 <!-- Menú desplegable "Mi Perfil" -->
                 <div class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-dark fs-5 fw-bold me-4" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle text-dark fs-5 fw-bold me-4" href="#" id="navbarDropdown"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Mi Perfil
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -54,186 +58,188 @@
                         <li><a class="dropdown-item" href="Historial.html">Historial</a></li>
                     </ul>
                 </div>
-                <a class="nav-link text-dark fs-5 fw-bold me-4" href="#">Subir Receta</a>
+                <a class="nav-link text-dark fs-5 fw-bold me-4" href="Subir.html">Subir Receta</a>
             </div>
             <!-- Caja de búsqueda -->
             <form class="d-flex search-box bg-white bg-opacity-90 p-2 rounded">
-                <input class="search-input form-control border-0 bg-transparent font-lobster fs-6" type="text" placeholder="Hey, ¿Listo para cocinar?" aria-label="Search">
-                <button class="search-btn btn btn-link text-dark fs-5 p-0" type="submit"> <a href="Resultados.html">🔍</a></button>
+                <input class="search-input form-control border-0 bg-transparent font-lobster fs-6" type="text"
+                    placeholder="Hey, ¿Listo para cocinar?" aria-label="Search">
+                <button class="search-btn btn btn-link text-dark fs-5 p-0" type="submit"> <a
+                        href="Resultados.html">🔍</a></button>
             </form>
         </div>
     </nav>
 
-        <section class="hero-section">
-            <div class="hero-content">
-                <span class="hero-subtitle">Recetitas Blog</span>
-                <h1 class="hero-title">Bienvenido a tu <br> Blog de Recetas</h1>
-                <img src="/Imagenes/logo.png" alt="Logo Recetitas" class="hero-logo">
-            </div>
-        </section>
+    <section class="hero-section">
+        <div class="hero-content">
+            <span class="hero-subtitle">Recetitas Blog</span>
+            <h1 class="hero-title">Bienvenido a tu <br> Blog de Recetas</h1>
+            <img src="/Imagenes/logo.png" alt="Logo Recetitas" class="hero-logo">
+        </div>
+    </section>
 
-        <section class="categorias">
-            <h2>Categorías</h2>
-            <div class="menu-categorias">
-                <button class="categoria active" data-categoria="desayunos">Desayunos</button>
-                <button class="categoria" data-categoria="comidas">Comidas</button>
-                <button class="categoria" data-categoria="cenas">Cenas</button>
-                <button class="categoria" data-categoria="bebidas">Bebidas</button>
-                <button class="categoria" data-categoria="postres">Postres</button>
-                <button class="categoria" data-categoria="antojitos">Antojitos</button>
-            </div>
+    <section class="categorias">
+        <h2>Categorías</h2>
+        <div class="menu-categorias">
+            <button class="categoria active" data-categoria="desayunos">Desayunos</button>
+            <button class="categoria" data-categoria="comidas">Comidas</button>
+            <button class="categoria" data-categoria="cenas">Cenas</button>
+            <button class="categoria" data-categoria="bebidas">Bebidas</button>
+            <button class="categoria" data-categoria="postres">Postres</button>
+            <button class="categoria" data-categoria="antojitos">Antojitos</button>
+        </div>
 
-            <div class="contenedor-recetas">
-                <!-- Contenedor de imágenes que cambiarán según la categoría -->
-                <div class="grid-recetas" id="desayunos">
-                    <img src="/Imagenes/filete.jpg" alt="Desayuno 1">
-                    <img src="/Imagenes/taco.jpg" alt="Desayuno 2">
-                    <img src="/Imagenes/pollo2.jpg" alt="Desayuno 3">
-                    <img src="/Imagenes/pechuga.jpg" alt="Desayuno 4">
-                    <img src="/Imagenes/pollo3.jpg" alt="Desayuno 5">
-                    <img src="/Imagenes/pozole.jpg" alt="Desayuno 6">
-                    <img src="/Imagenes/ramen.jpg" alt="Desayuno 7">
-                    <img src="/Imagenes/Pollo9.jpg" alt="Desayuno 8">
-                    <img src="/Imagenes/pollo2.jpg" alt="Desayuno 9">
-                    <img src="/Imagenes/pollo6.jpg" alt="Desayuno 10">
-                </div>
-
+        <div class="contenedor-recetas">
+            <!-- Contenedor de imágenes que cambiarán según la categoría -->
+            <div class="grid-recetas" id="desayunos">
+                <img src="/Imagenes/filete.jpg" alt="Desayuno 1">
+                <img src="/Imagenes/taco.jpg" alt="Desayuno 2">
+                <img src="/Imagenes/pollo2.jpg" alt="Desayuno 3">
+                <img src="/Imagenes/pechuga.jpg" alt="Desayuno 4">
+                <img src="/Imagenes/pollo3.jpg" alt="Desayuno 5">
+                <img src="/Imagenes/pozole.jpg" alt="Desayuno 6">
+                <img src="/Imagenes/ramen.jpg" alt="Desayuno 7">
+                <img src="/Imagenes/Pollo9.jpg" alt="Desayuno 8">
+                <img src="/Imagenes/pollo2.jpg" alt="Desayuno 9">
+                <img src="/Imagenes/pollo6.jpg" alt="Desayuno 10">
             </div>
 
-        </section>
+        </div>
 
-        <section class="recetas-rapidas">
-            <h2>Recetas Rápidas</h2>
-            <div class="recetas-container">
-                <div class="receta">
-                    <img src="/Imagenes/filete.jpg" alt="Filete Asado">
-                    <div class="receta-info">
-                        <h3>Filete Asado</h3>
-                        <hr>
-                        <a href="Recetas.html" class="btn-receta">Ver Receta</a>
-                    </div>
-                </div>
+    </section>
 
-                <div class="receta">
-                    <img src="/Imagenes/lasaña.jpg" alt="Lasaña Clásica">
-                    <div class="receta-info">
-                        <h3>Lasaña Clásica</h3>
-                        <hr>
-                        <a href="Recetas.html" class="btn-receta">Ver Receta</a>
-                    </div>
-                </div>
-
-                <div class="receta">
-                    <img src="/Imagenes/ramen.jpg" alt="Ramen Clásico">
-                    <div class="receta-info">
-                        <h3>Ramen Clásico</h3>
-                        <hr>
-                        <a href="Recetas.html" class="btn-receta">Ver Receta</a>
-                    </div>
+    <section class="recetas-rapidas">
+        <h2>Recetas Rápidas</h2>
+        <div class="recetas-container">
+            <div class="receta">
+                <img src="/Imagenes/filete.jpg" alt="Filete Asado">
+                <div class="receta-info">
+                    <h3>Filete Asado</h3>
+                    <hr>
+                    <a href="Recetas.html" class="btn-receta">Ver Receta</a>
                 </div>
             </div>
-        </section>
 
-        <section class="mejor-calificados">
-            <h2>Mejor Calificados</h2>
-            <div class="calificados-container">
-
-                <div class="calificado">
-                    <div class="calificado-img">
-                        <span class="dificultad facil">Nivel: Fácil</span>
-                        <img src="/Imagenes/taco.jpg" alt="Tacos Mexicanos">
-                    </div>
-                    <div class="calificado-info">
-                        <div class="estrellas">
-                            ⭐⭐⭐⭐⭐
-                        </div>
-                        <a href="Recetas.html" class="titulo-receta">Tacos Mexicanos</a>
-                        <p>Receta elaborada por: <a href="perfil.html" class="autor">Gordon Ramsay</a></p>
-                        <span class="rating">98%</span>
-                    </div>
+            <div class="receta">
+                <img src="/Imagenes/lasaña.jpg" alt="Lasaña Clásica">
+                <div class="receta-info">
+                    <h3>Lasaña Clásica</h3>
+                    <hr>
+                    <a href="Recetas.html" class="btn-receta">Ver Receta</a>
                 </div>
-
-                <div class="calificado">
-                    <div class="calificado-img">
-                        <span class="dificultad dificil">Nivel: Difícil</span>
-                        <img src="/Imagenes/pozole.jpg" alt="Pozole Mexicano">
-                    </div>
-                    <div class="calificado-info">
-                        <div class="estrellas">
-                            ⭐⭐⭐⭐☆
-                        </div>
-                        <a href="Recetas.html" class="titulo-receta">Pozole Mexicano</a>
-                        <p>Receta elaborada por: <a href="perfil.html" class="autor">La mera Mexicana</a></p>
-                        <span class="rating">91%</span>
-                    </div>
-                </div>
-
-                <div class="calificado">
-                    <div class="calificado-img">
-                        <span class="dificultad intermedio">Nivel: Intermedio</span>
-                        <img src="/Imagenes/pechuga.jpg" alt="Pechuga Empanizada">
-                    </div>
-                    <div class="calificado-info">
-                        <div class="estrellas">
-                            ⭐⭐⭐⭐⭐
-                        </div>
-                        <a href="Recetas.html" class="titulo-receta">Pechuga Empanizada</a>
-                        <p>Receta elaborada por: <a href="perfil.html" class="autor">La capital</a></p>
-                        <span class="rating">97%</span>
-                    </div>
-                </div>
-
-                <div class="calificado">
-                    <div class="calificado-img">
-                        <span class="dificultad facil">Nivel: Fácil</span>
-                        <img src="/Imagenes/brownies.jpg" alt="Brownies de Chocolate">
-                    </div>
-                    <div class="calificado-info">
-                        <div class="estrellas">
-                            ⭐⭐⭐⭐⭐
-                        </div>
-                        <a href="Recetas.html" class="titulo-receta">Brownies de Chocolate</a>
-                        <p>Receta elaborada por: <a href="perfil.html" class="autor">Postres El Tío Ben</a></p>
-                        <span class="rating">95%</span>
-                    </div>
-                </div>
-
             </div>
-        </section>
 
-            <!-- Bootstrap JS -->
+            <div class="receta">
+                <img src="/Imagenes/ramen.jpg" alt="Ramen Clásico">
+                <div class="receta-info">
+                    <h3>Ramen Clásico</h3>
+                    <hr>
+                    <a href="Recetas.html" class="btn-receta">Ver Receta</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mejor-calificados">
+        <h2>Mejor Calificados</h2>
+        <div class="calificados-container">
+
+            <div class="calificado">
+                <div class="calificado-img">
+                    <span class="dificultad facil">Nivel: Fácil</span>
+                    <img src="/Imagenes/taco.jpg" alt="Tacos Mexicanos">
+                </div>
+                <div class="calificado-info">
+                    <div class="estrellas">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+                    <a href="Recetas.html" class="titulo-receta">Tacos Mexicanos</a>
+                    <p>Receta elaborada por: <a href="perfil.html" class="autor">Gordon Ramsay</a></p>
+                    <span class="rating">98%</span>
+                </div>
+            </div>
+
+            <div class="calificado">
+                <div class="calificado-img">
+                    <span class="dificultad dificil">Nivel: Difícil</span>
+                    <img src="/Imagenes/pozole.jpg" alt="Pozole Mexicano">
+                </div>
+                <div class="calificado-info">
+                    <div class="estrellas">
+                        ⭐⭐⭐⭐☆
+                    </div>
+                    <a href="Recetas.html" class="titulo-receta">Pozole Mexicano</a>
+                    <p>Receta elaborada por: <a href="perfil.html" class="autor">La mera Mexicana</a></p>
+                    <span class="rating">91%</span>
+                </div>
+            </div>
+
+            <div class="calificado">
+                <div class="calificado-img">
+                    <span class="dificultad intermedio">Nivel: Intermedio</span>
+                    <img src="/Imagenes/pechuga.jpg" alt="Pechuga Empanizada">
+                </div>
+                <div class="calificado-info">
+                    <div class="estrellas">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+                    <a href="Recetas.html" class="titulo-receta">Pechuga Empanizada</a>
+                    <p>Receta elaborada por: <a href="perfil.html" class="autor">La capital</a></p>
+                    <span class="rating">97%</span>
+                </div>
+            </div>
+
+            <div class="calificado">
+                <div class="calificado-img">
+                    <span class="dificultad facil">Nivel: Fácil</span>
+                    <img src="/Imagenes/brownies.jpg" alt="Brownies de Chocolate">
+                </div>
+                <div class="calificado-info">
+                    <div class="estrellas">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+                    <a href="Recetas.html" class="titulo-receta">Brownies de Chocolate</a>
+                    <p>Receta elaborada por: <a href="perfil.html" class="autor">Postres El Tío Ben</a></p>
+                    <span class="rating">95%</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
+</body>
 
-    <footer>
-        <div class="pdpIzq">
-            <p>¿Quienes somos?</p>
-            <p>Somos un blog público de recetas</p>
-            <p>Nuestro proposito es ayudar a aprender a cocinar a los usuarios</p>
-        </div>
+<footer>
+    <div class="pdpIzq">
+        <p>¿Quienes somos?</p>
+        <p>Somos un blog público de recetas</p>
+        <p>Nuestro proposito es ayudar a aprender a cocinar a los usuarios</p>
+    </div>
 
-        <div class="pdpcontactanos">
-            <p>Siguenos en redes sociales</p>
-            <div class="pdpcontenedorimagenes">
-                <div class="pdpImg">
-                    <img src="../Imagenes/facebook-new.png" alt="Facebook">
-                </div>
-                <div class="pdpImg">
-                    <img src="../Imagenes/Twitter.png" alt="Twitter">
-                </div>
-                <div class="pdpImg">
-                    <img src="../Imagenes/Instagram.jpg" alt="Twitter">
-                </div>
+    <div class="pdpcontactanos">
+        <p>Siguenos en redes sociales</p>
+        <div class="pdpcontenedorimagenes">
+            <div class="pdpImg">
+                <img src="../Imagenes/facebook-new.png" alt="Facebook">
+            </div>
+            <div class="pdpImg">
+                <img src="../Imagenes/Twitter.png" alt="Twitter">
+            </div>
+            <div class="pdpImg">
+                <img src="../Imagenes/Instagram.jpg" alt="Twitter">
             </div>
         </div>
+    </div>
 
-        <div class="pdpderecha">
-            <p>Encuentranos en:</p>
-            <p>Rio Pantitlan 4632, Colonia Americas 25843, Méxicali, Baja California, México.</p>
-            <p>Contacto: +52 686 323 7433</p>
-            <p><a class="HipertextoFooter" href="../HTML/Formulario.html">Manda un mensaje a los desarrolladores</a>
-            </p>
-        </div>
-    </footer>
+    <div class="pdpderecha">
+        <p>Encuentranos en:</p>
+        <p>Rio Pantitlan 4632, Colonia Americas 25843, Méxicali, Baja California, México.</p>
+        <p>Contacto: +52 686 323 7433</p>
+        <p><a class="HipertextoFooter" href="../HTML/Formulario.html">Manda un mensaje a los desarrolladores</a>
+        </p>
+    </div>
+</footer>
 
 </html>
