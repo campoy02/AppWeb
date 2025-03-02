@@ -30,9 +30,9 @@ font-weight: bold;
 }
 
 .ImagenSuperior img {
-    width: 100%; /* La imagen ocupa todo el ancho del contenedor */
-    height: auto; /* Mantiene la proporción */
-    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    width: 100%; /* Ocupa todo el ancho */
+    height: 100%; /* Ajusta la altura para ocupar todo el contenedor */
+    object-fit: cover; /* Se adapta sin deformarse */
     border-radius: 10%; /* Respeta el borde redondeado */
 }
 
