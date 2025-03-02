@@ -30,7 +30,7 @@ body {
 
 .hero-section {
     position: relative;
-    width: 96.7%;
+    width: 99%;
     height: 370px;
     background-image: url('/Imagenes/tusrecetas.png');
     background-size: cover;
@@ -87,8 +87,8 @@ body {
 
 .hero-logo {
     position: absolute;
-    bottom: 310px;
-    right: 355px;
+    bottom: 290px;
+    right: 410px;
     width: 70px;
     background: rgba(255, 255, 255, 0.3);
     padding: 5px;
