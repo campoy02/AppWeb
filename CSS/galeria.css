@@ -1,3 +1,13 @@
+.resultadotexto{
+    margin: auto;
+    width: 50%;
+    text-align: center; /* Centra el texto dentro del div */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    padding-top: 10px;
+    flex-direction: column; /* Alinea los elementos de manera vertical si hay más contenido */
+}
 .ResultadoBusqueda {
     font: 1.2em;
     height: 100px;
