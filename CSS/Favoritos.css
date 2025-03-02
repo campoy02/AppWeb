@@ -7,7 +7,7 @@ body {
 }
 
 
-.titulofavoritos{
+.titulofavoritos {
 
     text-align: center;
     padding: 20px;
@@ -24,6 +24,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
 }
+
 .recipe {
     position: relative;
     background-size: cover;
@@ -39,6 +40,7 @@ body {
     font-weight: bold;
     padding-bottom: 10px;
 }
+
 .recipe::before {
     content: "";
     position: absolute;
@@ -49,6 +51,7 @@ body {
     background: rgba(0, 0, 0, 0.4);
     border-radius: 10px;
 }
+
 .recipe h2 {
     position: relative;
     z-index: 1;
@@ -57,10 +60,71 @@ body {
     margin: 0;
     padding: 5px;
 }
+
 .footer {
     text-align: center;
     padding: 15px;
     background-color: #7E5A46;
     color: white;
     margin-top: 20px;
+}
+
+.favoritos-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    position: relative;
+}
+
+.previsualizacion {
+    width: 48%;
+}
+
+.imagen-container {
+    position: relative;
+    display: inline-block;
+}
+
+.imagen-container img {
+    width: 80%;
+    border-radius: 10px;
+}
+
+.btn-eliminar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.lista-favoritos {
+    width: 48%;
+}
+
+.favorito {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.favorito img {
+    width: 120px;
+    height: 120px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.separador {
+    position: absolute;
+    top: 10;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background-color: #ccc;
+    transform: translateX(-50%);
 }

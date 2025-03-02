@@ -1,20 +1,22 @@
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis Recetas - Blog de Recetas</title>
-    
+
     <link rel="stylesheet" href="../CSS/PieDePagina.css">
 
     <link rel="stylesheet" href="../CSS/Encabezado.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
-     <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Slab:wght@400;700&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="../CSS/Favoritos.css">
 
@@ -23,61 +25,120 @@
 
 
 <body>
-      <!-- Header -->
-  <header class="header position-relative w-100 overflow-hidden">
-    <div class="banner position-relative w-100 h-100">
-        <!-- Título -->
-        <h1 class="title position-absolute top-0 start-50 translate-middle-x fs-1 fw-bold font-lobster text-center text-brown bg-white bg-opacity-30 p-2 rounded d-flex align-items-center gap-2">
-            Recetitas <span>Blog</span>
-        </h1>
-        <!-- Logo -->
-        <img src="../Imagenes/logo.png" alt="Logo Recetitas" class="logo position-absolute top-0 end-0 m-2">
-    </div>
-</header>
+    <!-- Header -->
+    <header class="header position-relative w-100 overflow-hidden">
+        <div class="banner position-relative w-100 h-100">
+            <!-- Título -->
+            <h1
+                class="title position-absolute top-0 start-50 translate-middle-x fs-1 fw-bold font-lobster text-center text-brown bg-white bg-opacity-30 p-2 rounded d-flex align-items-center gap-2">
+                Recetitas <span>Blog</span>
+            </h1>
+            <!-- Logo -->
+            <img src="../Imagenes/logo.png" alt="Logo Recetitas" class="logo position-absolute top-0 end-0 m-2">
+        </div>
+    </header>
 
-<!-- Barra de navegación -->
-<nav class="nav-bar navbar navbar-expand-lg navbar-light bg-brown py-3">
-    <div class="container-fluid">
-        <!-- Enlaces de navegación -->
-        <div class="navbar-nav me-auto mb-2 mb-lg-0">
-            <a class="nav-link text-dark fs-5 fw-bold me-4" href="index.html">Inicio</a>
-            <!-- Menú desplegable "Mi Perfil" -->
-            <div class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-dark fs-5 fw-bold me-4" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Mi Perfil
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="perfil.html">Mi Perfil</a></li>
-                    <li><a class="dropdown-item" href="Favoritos.html">Favoritos</a></li>
-                    <li><a class="dropdown-item" href="Historial.html">Historial</a></li>
-                </ul>
+    <!-- Barra de navegación -->
+    <nav class="nav-bar navbar navbar-expand-lg navbar-light bg-brown py-3">
+        <div class="container-fluid">
+            <!-- Enlaces de navegación -->
+            <div class="navbar-nav me-auto mb-2 mb-lg-0">
+                <a class="nav-link text-dark fs-5 fw-bold me-4" href="index.html">Inicio</a>
+                <!-- Menú desplegable "Mi Perfil" -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-dark fs-5 fw-bold me-4" href="#" id="navbarDropdown"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Mi Perfil
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="perfil.html">Mi Perfil</a></li>
+                        <li><a class="dropdown-item" href="Favoritos.html">Favoritos</a></li>
+                        <li><a class="dropdown-item" href="Historial.html">Historial</a></li>
+                    </ul>
+                </div>
+                <a class="nav-link text-dark fs-5 fw-bold me-4" href="#">Subir Receta</a>
             </div>
-            <a class="nav-link text-dark fs-5 fw-bold me-4" href="#">Subir Receta</a>
+            <!-- Caja de búsqueda -->
+            <form class="d-flex search-box bg-white bg-opacity-90 p-2 rounded">
+                <input class="search-input form-control border-0 bg-transparent font-lobster fs-6" type="text"
+                    placeholder="Hey, ¿Listo para cocinar?" aria-label="Search">
+                <button class="search-btn btn btn-link text-dark fs-5 p-0" type="submit"> <a
+                        href="Resultados.html">🔍</a></button>
+            </form>
         </div>
-        <!-- Caja de búsqueda -->
-        <form class="d-flex search-box bg-white bg-opacity-90 p-2 rounded">
-            <input class="search-input form-control border-0 bg-transparent font-lobster fs-6" type="text" placeholder="Hey, ¿Listo para cocinar?" aria-label="Search">
-            <button class="search-btn btn btn-link text-dark fs-5 p-0" type="submit"> <a href="Resultados.html">🔍</a></button>
-        </form>
-    </div>
-</nav>
+    </nav>
 
-       <div class = "titulofavoritos">  <h1>Favoritos</h1> </div>
+    <section class="favoritos-container">
+        <div class="previsualizacion">
+            <div class="imagen-container">
+                <button class="btn-eliminar">&#128465;</button>
+                <img src="/Imagenes/ramen.jpg" alt="Imagen de la receta">
+            </div>
+            <p>
+            <p>
+            <h2>Ramen Clasico</h2>
+            <p class="autor">Teresa Tus Recetas</p>
+            <div class="informacion">
+                <p>¡Hola, mis queridos ramen-lovers! Hoy les traigo una receta que no solo es deliciosa, sino también
+                    una aventura: ramen casero. Sí, esos fideitos mágicos que vienen en paquetitos sospechosos tienen
+                    una versión casera que es mil veces mejor. ¡Y acá te la enseño!
 
-    <div class="container">
-        <div class="recipe" style="background-image: url('tarta.jpg');">
-            <h2>Pay de queso</h2>
+                    Vamos a hacer un viaje directo a Japón, descubrir su historia, curiosidades, y sobre todo, ¡aprender
+                    a preparar un ramen espectacular desde cero! ¿Listos? ¡Vamos con ello!
+                </p>
+
+            </div>
         </div>
-        <div class="recipe" style="background-image: url('Ensalada.jpg');">
-            <h2>Ensalada de atun</h2>
+
+        <div class="separador"></div>
+
+        <div class="lista-favoritos">
+            <h2>Favoritos</h2>
+            <div class="favorito">
+                <img src="/Imagenes/ramen.jpg" alt="Nombre receta">
+                <div class="info-favorito">
+                    <h3 class="nombre-receta">Ramen Clasico</h3>
+                    <p class="creador">Teresa Tus Recetas</p>
+                </div>
+            </div>
+            <div class="favorito">
+                <img src="/Imagenes/filete.jpg" alt="Nombre receta">
+                <div class="info-favorito">
+                    <h3 class="nombre-receta">Filete Clasico</h3>
+                    <p class="creador">La Capital</p>
+                </div>
+            </div>
+            <div class="favorito">
+                <img src="/Imagenes/lasaña.jpg" alt="Nombre receta">
+                <div class="info-favorito">
+                    <h3 class="nombre-receta">Filete Clasico</h3>
+                    <p class="creador">La Capital</p>
+                </div>
+            </div>
+            <div class="favorito">
+                <img src="/Imagenes/pozole.jpg" alt="Nombre receta">
+                <div class="info-favorito">
+                    <h3 class="nombre-receta">Pozole Mexicano</h3>
+                    <p class="creador">La Capital</p>
+                </div>
+            </div>
+            <div class="favorito">
+                <img src="/Imagenes/tacos.jpg" alt="Nombre receta">
+                <div class="info-favorito">
+                    <h3 class="nombre-receta">Tacos Mexicanos</h3>
+                    <p class="creador">Recetas Mexicanas</p>
+                </div>
+            </div>
+            <div class="favorito">
+                <img src="/Imagenes/tacosalpastor.jpg" alt="Nombre receta">
+                <div class="info-favorito">
+                    <h3 class="nombre-receta">Tacos al Pastor</h3>
+                    <p class="creador">La Capital</p>
+                </div>
+            </div>
         </div>
-        <div class="recipe" style="background-image: url('pasta.jpg');">
-            <h2>Pasta Casera</h2>
-        </div>
-        <div class="recipe" style="background-image: url('sopa.jpg');">
-            <h2>Sopa</h2>
-        </div>
-    </div>
+    </section>
+
 
 </body>
 
@@ -107,10 +168,10 @@
         <p>Encuentranos en:</p>
         <p>Rio Pantitlan 4632, Colonia Americas 25843, Méxicali, Baja California, México.</p>
         <p>Contacto: +52 686 323 7433</p>
-        <p><a class = "HipertextoFooter" href="../HTML/Formulario.html">Manda un mensaje a los desarrolladores</a></p>
+        <p><a class="HipertextoFooter" href="../HTML/Formulario.html">Manda un mensaje a los desarrolladores</a></p>
     </div>
 
-    
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </footer>
