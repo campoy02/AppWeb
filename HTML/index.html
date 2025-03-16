@@ -21,6 +21,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Slab:wght@400;700&display=swap"
         rel="stylesheet">
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Al hacer clic en una categoría, cambiamos las imágenes visibles
+            $(".categoria").click(function () {
+                var categoria = $(this).data("categoria");
+
+                // Cambiar el color de la categoría seleccionada
+                $(".categoria").removeClass("active");
+                $(this).addClass("active");
+
+                // Ocultar todas las categorías y mostrar solo la seleccionada
+                $(".grid-recetas").hide();
+                $("#" + categoria).show();
+            });
+        });
+    </script>
+
+
 
 </head>
 
@@ -92,16 +111,89 @@
         <div class="contenedor-recetas">
             <!-- Contenedor de imágenes que cambiarán según la categoría -->
             <div class="grid-recetas" id="desayunos">
+                <img src="../Imagenes/desayuno1.jpg" alt="Desayuno 1">
+                <img src="../Imagenes/desayuno2.jpg" alt="Desayuno 2">
+                <img src="../Imagenes/desayuno3.jpg" alt="Desayuno 3">
+                <img src="../Imagenes/desayuno4.jpg" alt="Desayuno 4">
+                <img src="../Imagenes/desayuno5.jpg" alt="Desayuno 5">
+                <img src="../Imagenes/desayuno1.jpg" alt="Desayuno 1">
+                <img src="../Imagenes/desayuno2.jpg" alt="Desayuno 2">
+                <img src="../Imagenes/desayuno3.jpg" alt="Desayuno 3">
+                <img src="../Imagenes/desayuno4.jpg" alt="Desayuno 4">
+                <img src="../Imagenes/desayuno5.jpg" alt="Desayuno 5">
+
+            </div>
+
+            <div class="grid-recetas" id="comidas" style="display: none;">
+                <img src="../Imagenes/filete.jpg" alt="Desayuno 1">
+                <img src="../Imagenes/taco.jpg" alt="Desayuno 2">
+                <img src="../Imagenes/pollo3.jpg" alt="Desayuno 3">
+                <img src="../Imagenes/pollo5.jpg" alt="Desayuno 4">
+                <img src="../Imagenes/pollo4.jpg" alt="Desayuno 5">
+                <img src="../Imagenes/pozole.jpg" alt="Desayuno 6">
+                <img src="../Imagenes/pollo5.jpg" alt="Desayuno 7">
+                <img src="../Imagenes/Pollo9.jpg" alt="Desayuno 8">
+                <img src="../Imagenes/pollo3.jpg" alt="Desayuno 9">
+                <img src="../Imagenes/Pollo7.jpg" alt="Desayuno 10">
+
+            </div>
+
+            <div class="grid-recetas" id="cenas" style=" display: none;">
                 <img src="../Imagenes/filete.jpg" alt="Desayuno 1">
                 <img src="../Imagenes/taco.jpg" alt="Desayuno 2">
                 <img src="../Imagenes/pollo2.jpg" alt="Desayuno 3">
                 <img src="../Imagenes/pechuga.jpg" alt="Desayuno 4">
-                <img src="../Imagenes/pollo3.jpg" alt="Desayuno 5">
+                <img src="../Imagenes/pollo4.jpg" alt="Desayuno 5">
                 <img src="../Imagenes/pozole.jpg" alt="Desayuno 6">
                 <img src="../Imagenes/ramen.jpg" alt="Desayuno 7">
-                <img src="../Imagenes/Pollo9.jpg" alt="Desayuno 8">
+                <img src="../Imagenes/filete.jpg" alt="Desayuno 8">
                 <img src="../Imagenes/pollo2.jpg" alt="Desayuno 9">
-                <img src="../Imagenes/pollo6.jpg" alt="Desayuno 10">
+                <img src="../Imagenes/ramen.jpg" alt="Desayuno 10">
+
+            </div>
+
+            <div class="grid-recetas" id="bebidas" style="display: none;">
+                <img src="../Imagenes/bebidaD.jpg" alt="Desayuno 1">
+                <img src="../Imagenes/bebidaU.jpg" alt="Desayuno 2">
+                <img src="../Imagenes/bebidaT.jpg" alt="Desayuno 3">
+                <img src="../Imagenes/bebidaC.jpg" alt="Desayuno 4">
+                <img src="../Imagenes/bebida.jpg" alt="Desayuno 5">
+                <img src="../Imagenes/bebidaD.jpg" alt="Desayuno 1">
+                <img src="../Imagenes/bebidaU.jpg" alt="Desayuno 2">
+                <img src="../Imagenes/bebidaT.jpg" alt="Desayuno 3">
+                <img src="../Imagenes/bebidaC.jpg" alt="Desayuno 4">
+                <img src="../Imagenes/bebida.jpg" alt="Desayuno 5">
+
+            </div>
+
+            <div class="grid-recetas" id="postres" style="display: none;">
+                <img src="../Imagenes/brownies.jpg" alt="Desayuno 1">
+                <img src="../Imagenes/postre1.jpg" alt="Desayuno 2">
+                <img src="../Imagenes/postre2.jpg" alt="Desayuno 3">
+                <img src="../Imagenes/postre3.jpg" alt="Desayuno 4">
+                <img src="../Imagenes/postre4.jpg" alt="Desayuno 5">
+                <img src="../Imagenes/brownies.jpg" alt="Desayuno 1">
+                <img src="../Imagenes/postre1.jpg" alt="Desayuno 2">
+                <img src="../Imagenes/postre2.jpg" alt="Desayuno 3">
+                <img src="../Imagenes/postre3.jpg" alt="Desayuno 4">
+                <img src="../Imagenes/postre4.jpg" alt="Desayuno 5">
+
+
+            </div>
+
+            <div class="grid-recetas" id="antojitos" style="display: none;">
+                <img src="../Imagenes/frituras1.jpg" alt="Desayuno 1">
+                <img src="../Imagenes/frituras2.jpg" alt="Desayuno 2">
+                <img src="../Imagenes/frituras3.jpg" alt="Desayuno 3">
+                <img src="../Imagenes/frituras4.jpg" alt="Desayuno 4">
+                <img src="../Imagenes/frituras5.jpg" alt="Desayuno 5">
+                <img src="../Imagenes/frituras1.jpg" alt="Desayuno 1">
+                <img src="../Imagenes/frituras2.jpg" alt="Desayuno 2">
+                <img src="../Imagenes/frituras3.jpg" alt="Desayuno 3">
+                <img src="../Imagenes/frituras4.jpg" alt="Desayuno 4">
+                <img src="../Imagenes/frituras5.jpg" alt="Desayuno 5">
+
+
             </div>
 
         </div>

@@ -1,169 +1,121 @@
-.resultadotexto{
-    margin: auto;
-    width: 50%;
-    text-align: center; /* Centra el texto dentro del div */
-    display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    padding-top: 10px;
-    flex-direction: column; /* Alinea los elementos de manera vertical si hay más contenido */
-}
-.ResultadoBusqueda {
-    font: 1.2em;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* Estilos Generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
 }
 
-/* Contenedor que incluye los elementos de la página */
-.ContenedorMaestro {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    /* Ocupa al menos el 100% del alto de la ventana */
-    padding-bottom: 100px;
-    /* Espacio para el footer */
-    box-sizing: border-box;
-    /* Incluye el padding en el ancho y alto */
-}
-
-/* Placeholder para el color de fondo */
-.fondogaleria {
-    background-color: white;
-    width: 100%;
-    min-height: 100vh;
-    /* Ocupa al menos el 100% del alto de la ventana */
-}
-
-/* Boton para cambiar pagina de resultado */
-.NavegarResultado {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-/* Boton para cambiar pagina de resultado */
-.NavegarResultado button {
-    flex-grow: 1;
-    max-width: 200px;
-    font-size: 20px;
-    padding: 10px;
-    border: 2px solid #A94361;
-    border-radius: 5px;
-    background-color: #ffffff;
-    color: #5E3119;
-    cursor: pointer;
-    margin-top: -50px;
-}
-
-/* Estilo para la barra de búsqueda */
-.busqueda {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    position: absolute;
-    width: 80%;
-    top: 100px;
-    left: 10%;
-    gap: 10px;
-}
-
-
-/* Personalizar parte de adentro de barra búsqueda */
-.busqueda input {
-    padding: 10px;
-    width: 100%;
-    border: 2px solid #A94361;
-    border-radius: 5px;
-    font-size: 16px;
-    background-color: #ffffff;
-    color: #5E3119;
-}
-
-/* Botón de búsqueda */
-.busqueda button {
-    flex-grow: 1;
-    /* Los botones crecen para ocupar el espacio disponible */
-    max-width: 200px;
-    /* Ancho máximo de los botones */
-    font-size: 20px;
-    padding: 10px;
-    border: 2px solid #A94361;
-    border-radius: 5px;
-    background-color: #ffffff;
-    color: #5E3119;
-    cursor: pointer;
-}
-
-/* Estilo para el contenedor de las imágenes */
-.item {
-    aspect-ratio: 1/1;
-    flex-basis: calc(18% - 20px);
-    text-align: center;
-    background-color: #A3B18A;
+.navbar {
+    background-color: #a18a7c;
+    padding: 10px 0;
     color: white;
-    padding: 5px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    border-radius: 25px;
+    text-align: center;
 }
 
-/* Codigo para aumentar tamaño de la imagen al pasar el mouse encima */
-img:hover {
-    transform: scale(1.2);
-    transition-delay: 250ms;
+.navbar .logo {
+    font-size: 1.8em;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-img {
-    width: 50vh;
-    height: 50vh;
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 25px;
-    transition: transform 250ms ease-in-out;
+.search-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
 }
 
-/* Contenedor con las imágenes */
-.container {
+.search-box input {
+    padding: 10px;
+    font-size: 1em;
+    width: 50%;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-box button {
+    padding: 10px;
+    background-color: #f8f7f6;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+/* Resultados de búsqueda */
+.search-results h1 {
+    text-align: center;
+    font-size: 2em;
+    margin: 20px;
+    color: #333;
+}
+
+.recipes-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Separa los elementos uniformemente */
+    /* Asegura que las recetas se ajusten a la fila */
+    justify-content: space-around;
+    gap: 20px;
+    /* Espacio entre las tarjetas */
+    padding: 20px;
+}
+
+.recipe-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 18%;
+    /* Controla el ancho de cada tarjeta para que haya 5 por fila */
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    margin-bottom: 20px;
+    /* Agrega espacio debajo de cada tarjeta */
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.recipe-card:hover {
+    transform: scale(1.05);
+}
+
+.recipe-card img:hover {
+    transform: scale(1.1);
+}
+
+.recipe-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.recipe-info h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.recipe-info p {
+    font-size: 1em;
+    color: #777;
+}
+
+/* Para los botones */
+.search-btn {
+    background-color: #f39c12;
+    color: white;
+    border-radius: 5px;
     padding: 10px;
-    gap: 20px; /* Espaciado más pequeño */
-    margin: auto; /* Centrar el contenedor */
-    width: 90%; /* Ajusta el ancho para que no queden bordes sobrantes */
-    margin-bottom: 10%;
-    margin-top: 5%;
+    font-size: 1.2em;
+    cursor: pointer;
 }
 
-/* 4 Columnas */
-@media screen and (min-width: 801px) {
-    .item {
-        flex-basis: calc(20% - 20px);
-    }
+.search-btn:hover {
+    background-color: #e67e22;
 }
-
-/* 3 Columnas */
-@media screen and (min-width: 650px) and (max-width: 800px) {
-    .item {
-        flex-basis: calc(30% - 20px);
-    }
-}
-
-/* Dos columnas */
-@media screen and (min-width: 451px) and (max-width: 649px) {
-    .item {
-        flex-basis: calc(45% - 20px);
-    }
-}
-
-/* Una Columna */
-@media screen and (min-width: 0px) and (max-width: 450px) {
-    .item {
-        flex-basis: calc(100% - 20px);
-    }
-}
-

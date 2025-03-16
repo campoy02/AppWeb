@@ -14,6 +14,10 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Slab:wght@400;700&display=swap"
         rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 
 <body class="fondogaleria">
@@ -62,47 +66,122 @@
     </nav>
 
     <!-- Contenido principal -->
-    <div class="ContenedorMaestro">
-        <p>
-        <p>
-        <div class="resultadotexto"><h3> Resultado para tus busquedas<h3> </div>
-                <div class="container">
-                    <div class="item">
-                        <a href="../HTML/Recetas.html"><img src="../Imagenes/PolloAsado.jpg" alt="Imagen 1"></a>
-                    </div>
-                    <div class="item">
-                        <img src="../Imagenes/Comida.jpg" alt="Imagen 2">
-                    </div>
-                    <div class="item">
-                        <img src="../Imagenes/pollo2.jpg" alt="Imagen 3">
-                    </div>
-                    <div class="item">
-                        <img src="../Imagenes/pollo3.jpg" alt="Imagen 4">
-                    </div>
-                    <div class="item">
-                        <img src="../Imagenes/pollo4.jpg" alt="Imagen 5">
-                    </div>
-                    <div class="item">
-                        <img src="../Imagenes/pollo5.jpg" alt="Imagen 6">
-                    </div>
-                    <div class="item">
-                        <img src="../Imagenes/pollo6.jpg" alt="Imagen 7">
-                    </div>
-                    <div class="item">
-                        <img src="../Imagenes/Pollo7.jpg" alt="Imagen 8">
-                    </div>
-                    <div class="item">
-                        <img src="../Imagenes/Pollo8.jpg" alt="Imagen 9">
-                    </div>
-                    <div class="item">
-                        <img src="../Imagenes/Pollo9.jpg" alt="Imagen 10">
-                    </div>
+
+    <!-- Título de la página -->
+    <section class="search-results">
+        <h1>Resultado para tus búsquedas</h1>
+        <div class="recipes-container">
+            <div class="recipe-card">
+                <img src="../Imagenes/filete.jpg" alt="Filete Asado">
+                <div class="recipe-info">
+                    <h3>Filete Asado</h3>
+                    <p>Receta deliciosa de filete asado.</p>
                 </div>
-                <div class="NavegarResultado">
-                    <button>Página Anterior</button>
-                    <button>Página Posterior</button>
+            </div>
+            <div class="recipe-card">
+                <img src="../Imagenes/lasaña.jpg" alt="Lasaña Clásica">
+                <div class="recipe-info">
+                    <h3>Lasaña Clásica</h3>
+                    <p>Receta de lasaña tradicional.</p>
                 </div>
-    </div>
+            </div>
+            <div class="recipe-card">
+                <img src="../Imagenes/ramen.jpg" alt="Ramen Clásico">
+                <div class="recipe-info">
+                    <h3>Ramen Clásico</h3>
+                    <p>Receta auténtica de ramen.</p>
+                </div>
+            </div>
+            <div class="recipe-card">
+                <img src="../Imagenes/taco.jpg" alt="Tacos Mexicanos">
+                <div class="recipe-info">
+                    <h3>Tacos Mexicanos</h3>
+                    <p>Receta de tacos con carne.</p>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <img src="../Imagenes/frituras2.jpg" alt="Filete Asado">
+                <div class="recipe-info">
+                    <h3>Receta de frituras</h3>
+                    <p>Receta deliciosa de frituras asado.</p>
+                </div>
+            </div>
+            <div class="recipe-card">
+                <img src="../Imagenes/bebidaD.jpg" alt="Lasaña Clásica">
+                <div class="recipe-info">
+                    <h3>Bebidas</h3>
+                    <p>Receta para bebidas</p>
+                </div>
+            </div>
+            <div class="recipe-card">
+                <img src="../Imagenes/bebidaT.jpg" alt="Ramen Clásico">
+                <div class="recipe-info">
+                    <h3>Bebida fria</h3>
+                    <p>Receta para una bebida fria chocolate.</p>
+                </div>
+            </div>
+            <div class="recipe-card">
+                <img src="../Imagenes/chilerelleno.jpeg" alt="Tacos Mexicanos">
+                <div class="recipe-info">
+                    <h3>Chiles rellenos Mexicanos</h3>
+                    <p>Receta de chiles rellenos con carne.</p>
+                </div>
+            </div>
+            <div class="recipe-card">
+                <img src="../Imagenes/postre3.jpg" alt="Lasaña Clásica">
+                <div class="recipe-info">
+                    <h3>Postre de chocolate</h3>
+                    <p>Receta para postre de chocolate horneado.</p>
+                </div>
+            </div>
+            <div class="recipe-card">
+                <img src="../Imagenes/postre4.jpg" alt="Ramen Clásico">
+                <div class="recipe-info">
+                    <h3>Postre dulce</h3>
+                    <p>Receta postre frio de temporada.</p>
+                </div>
+            </div>
+            <div class="recipe-card">
+                <img src="../Imagenes/desayuno3.jpg" alt="Tacos Mexicanos">
+                <div class="recipe-info">
+                    <h3>Tacos Mexicanos</h3>
+                    <p>Receta de tacos con carne.</p>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <img src="../Imagenes/desayuno5.jpg" alt="Filete Asado">
+                <div class="recipe-info">
+                    <h3>Avenas</h3>
+                    <p>Receta para desayuno de avenas.</p>
+                </div>
+            </div>
+            <div class="recipe-card">
+                <img src="../Imagenes/desayuno2.jpg" alt="Lasaña Clásica">
+                <div class="recipe-info">
+                    <h3>Desayuno nutritivo</h3>
+                    <p>Receta para desayuno vegano con frutas.</p>
+                </div>
+            </div>
+            <div class="recipe-card">
+                <img src="../Imagenes/ramen.jpg" alt="Ramen Clásico">
+                <div class="recipe-info">
+                    <h3>Ramen Clásico</h3>
+                    <p>Receta auténtica de ramen.</p>
+                </div>
+            </div>
+            <div class="recipe-card">
+                <img src="../Imagenes/taco.jpg" alt="Tacos Mexicanos">
+                <div class="recipe-info">
+                    <h3>Tacos Mexicanos</h3>
+                    <p>Receta de tacos con carne.</p>
+                </div>
+            </div>
+            <!-- Agrega más recetas aquí -->
+        </div>
+    </section>
+
 
     <!-- Footer -->
     <footer>
