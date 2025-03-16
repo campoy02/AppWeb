@@ -1,3 +1,13 @@
+/* Func. Para cargar del localstorage */
+function loadCartFromLocalStorage() {
+  const savedCart = localStorage.getItem("cart");
+  if (savedCart) {
+    cart = JSON.parse(savedCart);
+    updateCart();
+    getTotal(cart);
+  }
+}
+
 const products = [
     { name: "Libros Oficiales", price: 300, image: "../imagenes/Libro.jpg" , id: 1, quantity: 1,},
     { name: "Camisetas Oficiales", price: 150, image: "../imagenes/Camisa.jpg", id: 2, quantity: 1,},
@@ -36,6 +46,7 @@ const products = [
   
     const cartItems = document.querySelector(".cart-items");
     cartItems.innerHTML = cartHTML.join("");
+    localStorage.setItem("cart", JSON.stringify(cart));
   }
   
   let num = document.querySelectorAll(".product-btn").length;
@@ -107,7 +118,10 @@ const products = [
 
   // Codigo para mostrar y ocultar calculadora
 
+  /* DOMContentLoaded ejecuta código cuando cargan los scripts y HTML de la pagina*/
   document.addEventListener("DOMContentLoaded", () => {
+    loadCartFromLocalStorage();
+
     const boton = document.querySelector(".ocultar");
     const calculadora = document.querySelector(".calculator");
     const result = document.querySelector(".result");
@@ -125,7 +139,16 @@ const products = [
     });
   });
 
+  /* Codigo boton comprar*/
 
+  document.querySelector(".buy-btn").addEventListener("click", () => {
+    cart = [];
+    updateCart();
+    getTotal(cart);
+    localStorage.removeItem("cart");
+  });
+
+  
   // Codigo Calculadora // 
   const display = document.querySelector(".display");
 const buttons = document.querySelectorAll(".botonescalc");
