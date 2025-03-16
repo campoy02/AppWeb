@@ -1,50 +1,78 @@
-.DatosAutor{
- display: flex;
- gap: 20px;
+.receta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
 }
 
-.SeccionSuperior {
-    font-size: 2em;
-    display: flex; /* Permite que los elementos se alineen horizontalmente */
-    flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea si no caben */
-    padding: 20px; 
-    gap: 20px; /* Añade espacio entre los elementos */
-  
-    align-items: stretch; /* Hace que ambos elementos tengan la misma altura */
+.imagen-receta {
+    position: relative;
+    text-align: center;
 }
 
-.Valoracion { 
-font-weight: bold;
+.imagen-receta img {
+    width: 100%;
+    border-radius: 10px;
 }
 
-.ImagenSuperior {
-    width: 50%; /* Tamaño del contenedor */
-    height: auto; /* Ajuste automático para mantener la proporción */
-    background-color: #A3B18A; 
-    padding: 10px; 
-    border-radius: 10%; 
-    overflow: hidden; /* Evita que la imagen se salga del borde */
-    display: flex; /* Permite centrar la imagen dentro del contenedor */
+.valoracion {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 215, 0, 0.9);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.detalles-receta {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
 
-.ImagenSuperior img {
-    width: 100%; /* Ocupa todo el ancho */
-    height: 100%; /* Ajusta la altura para ocupar todo el contenedor */
-    object-fit: cover; /* Se adapta sin deformarse */
-    border-radius: 10%; /* Respeta el borde redondeado */
+.titulo-receta {
+    font-family: 'Lobster', cursive;
+    font-size: 2em;
+    color: #d32f2f;
 }
 
-.InformacionReceta {
-    color: white;
-    
-    width: 40%; 
-    background-color: #A3B18A; 
-    padding: 20px; 
-    border-radius: 8px; 
-    box-sizing: border-box; /* Asegura que el padding no aumente el tamaño total */
+.contenido-receta {
+    grid-column: span 2;
+    display: flex;
+    justify-content: space-between;
 }
+
+.ingredientes, .tips {
+    flex: 1;
+    padding: 15px;
+    background: #f8f8f8;
+    border-radius: 10px;
+}
+
+.imagenes-receta {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.imagenes-receta img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.preparacion {
+    grid-column: span 2;
+    padding: 20px;
+    background: #fff3e0;
+    border-radius: 10px;
+}
+
+
+/* lo normal */
 
 .Video {
     display: flex; 
