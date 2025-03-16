@@ -70,65 +70,121 @@
     </nav>
 
 
-    <section class="receta">
-        <div class="imagen-receta">
-            <div class="valoracion">★★★★★</div>
-            <img src="../Imagenes/ramen.jpg" alt="Imagen de la receta">
+    <div class="recipe-container">
+
+        <!-- Sección izquierda: Imagen y Valoración -->
+        <div class="recipe-left">
+            <div class="rating">
+                <h3>Valoracion de 5 estrellas</h3>
+                <!-- Aquí se puede agregar una barra de estrellas o un sistema de puntuación -->
+            </div>
+            <div class="recipe-image">
+                <img src="../Imagenes/ramen.jpg" alt="Imagen de la receta">
+            </div>
+
+            <!-- Tips -->
+            <hr class="separator">
+
+            <div class="tips">
+                <h3 class="titulos">Tips</h3>
+                <p><strong>Caldo más espeso:</strong> Si prefieres un caldo más espeso, puedes agregar un poco de
+                    crema
+                    de sésamo (tahini) o más pasta de miso.</p>
+                <p><strong>Marinado para la carne:</strong> Para un sabor más intenso, marinar la carne de cerdo en
+                    salsa de soja, mirin, ajo y jengibre antes de cocinarla le dará un toque extra de sabor.</p>
+                <p><strong>A baja temperatura:</strong> Si tienes un termómetro, los huevos cocidos a baja
+                    temperatura
+                    (a unos 63°C) tendrán una textura más cremosa y suave.</p>
+                <p><strong>Fideos frescos:</strong> Los fideos frescos dan un sabor más auténtico, pero si usas
+                    secos,
+                    asegúrate de no cocinarlos demasiado.</p>
+            </div>
+            <hr class="separator">
+            <!-- Imágenes adicionales -->
+            <div class="additional-images">
+                <h3 class="titulos">Imágenes de Apoyo</h3>
+                <img src="../Imagenes/ingre1.jpg" alt="Imagen adicional 1">
+                <img src="../Imagenes/ingre2.jpg" alt="Imagen adicional 2">
+            </div>
+
+
+
         </div>
-        <div class="detalles-receta">
-            <h2 class="titulo-receta">Ramen Clasico</h2>
-            <p class="autor">Autor: La Capital</p>
-            <p class="personas">Porciones: 2 personas</p>
-            <p class="tiempo">Tiempo: 45 min - 60 min</p>
-            <p class="nivel">Dificultad: Intermedio</p>
-        </div>
-    
-        <div class="contenido-receta">
-            <div class="ingredientes">
-                <h3>Ingredientes</h3>
+
+        <hr class="separator">
+
+        <!-- Sección derecha: Información general de la receta -->
+        <div class="recipe-right">
+            <div class="recipe-info">
+                <h2 class="titulo">Ramen Clasico</h2>
+                <p>Autor: <strong>La Capital</strong></p>
+                <p>Personas: <strong>4 personas</strong></p>
+                <p>Tiempo: <strong>40 minutos</strong></p>
+                <p>Nivel: <strong>Fácil</strong></p>
+            </div>
+
+            <hr class="separator">
+            <!-- Ingredientes -->
+            <div class="ingredients">
+                <h3 class="titulos">Ingredientes</h3>
                 <ul>
-                    <li>3 Litros de Agua</li>
-                    <li>Pasta para Ramen</li>
-                    <li>Especiuas al gusto</li>
-                    <li>1 kg de huesos de cerdo (pueden ser de espinazo, costilla o patas)
-                    <li>1 cebolla grande</li>
-                            <li>5 dientes de ajo</li>
-                            <li>1 trozo de jengibre (aprox. 5 cm)</li>
-                            <li>zanahoria</li>
-                            <li>1 puerro o cebollín (parte blanca)</li>
-                            <li> 2 cucharadas de miso blanco o rojo</li>
-                            <li> 2 cucharadas de salsa de soya</li>
-
-
-                
+                    <li>1 litro de caldo de pollo (puedes usar caldo de cerdo o vegetal si prefieres)</li>
+                    <li>2 cucharadas de pasta de miso (opcional, pero le da un sabor profundo)</li>
+                    <li>2 cucharadas de salsa de soja</li>
+                    <li>1 cucharada de mirin (opcional, pero le da un toque dulce)</li>
+                    <li>1 trozo de alga kombu (opcional, para darle un sabor umami)</li>
+                    <li>1 diente de ajo machacado</li>
+                    <li>1 trozo pequeño de jengibre fresco (al gusto)</li>
+                    <h5>Fideos:</h5>
+                    <li>200g de fideos de ramen (pueden ser frescos o secos)</li>
+                    <h5>Toppings:</h5>
+                    <li>2 huevos cocidos a baja temperatura (o cocidos por 6-7 minutos)</li>
+                    <li>100g de cerdo (lomo o panceta) en rodajas finas, marinadas o cocinadas</li>
+                    <li>Cebollín picado</li>
+                    <li>Algas nori (opcional)</li>
+                    <li>Chile en rodajas o pasta de chile (opcional para un toque picante)</li>
                 </ul>
             </div>
-            <div class="tips">
-                <h3>Tips</h3>
-                <p>[Consejo sobre la receta]</p>
-            </div>
-            <div class="imagenes-receta">
-                <img src="../Imagenes/ingre1.jpg" alt="Paso 1">
-                <img src="../Imagenes/ingre2.jpg" alt="Paso 2">
+
+
+            <hr class="separator">
+            <!-- Preparación -->
+            <div class="preparation">
+                <h3 class="titulos">Preparación</h3>
+                <p>Prepara el caldo:
+
+                    En una olla grande, coloca el caldo de pollo, el ajo machacado, el jengibre, el kombu y la pasta
+                    de
+                    miso (si la estás usando).
+                    Lleva a fuego medio y deja que hierva lentamente. Una vez que haya comenzado a hervir, reduce el
+                    fuego y deja cocinar durante 15-20 minutos para que los sabores se mezclen bien.
+                    Añade la salsa de soja y el mirin al gusto. Prueba el caldo y ajusta los ingredientes según lo
+                    necesites. Si te gusta más salado, puedes añadir más salsa de soja.
+                    Cocina los fideos:</p>
+
+                <p>Mientras el caldo se cocina, hierve agua en otra olla. Cocina los fideos de ramen según las
+                    instrucciones del paquete (normalmente 3-5 minutos).
+                    Una vez cocidos, escurre bien los fideos y enjuágalos ligeramente con agua fría para detener la
+                    cocción.</p>
+
+                <p>Prepara los toppings:
+
+                    Cocina los huevos en agua hirviendo durante 6-7 minutos para que las yemas queden ligeramente
+                    cremosas. Después, pélalos y córtalos por la mitad.
+                    Si no tienes la carne marinada, puedes saltear las rodajas de cerdo en una sartén hasta que
+                    estén
+                    doradas.
+                    Corta el cebollín y prepara los brotes de bambú.</p>
+                Montaje del ramen:
+
+                Coloca los fideos cocidos en un tazón grande.
+                Vierte el caldo caliente sobre los fideos.
+                Coloca los huevos, la carne de cerdo, el cebollín, los brotes de bambú y las algas nori por encima.
+                Añade un chorrito de aceite de sésamo y espolvorea un poco de sésamo tostado.
+                Si te gusta el picante, añade unas rodajas de chile o pasta de chile.</p>
             </div>
         </div>
-    
-        <div class="preparacion">
-            <h3>Preparación</h3>
-            <p>[Instrucciones paso a paso]</p>
-        </div>
-    </section>
-    
-
-    <div class="Video">
-        <iframe width="700" height="450" src="https://www.youtube.com/embed/WHNEU9NYZCw?si=EPRusU5zX8RqIL8z"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-            <button class = "btn-favoritos"> Agregar a Favoritos! </button>
     </div>
-
 
 </body>
 <footer>
