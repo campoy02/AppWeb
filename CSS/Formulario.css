@@ -94,6 +94,13 @@ h3 {
     color: #0e0e0e;
 }
 
+.mensaje-error {
+    color: red; 
+    font-size: 0.9em; 
+    display: block; 
+    margin-top: 5px; 
+}
+
 /* Media Queries para ajustar el texto en pantallas pequeñas */
 @media (max-width: 768px) {
     h1 {
