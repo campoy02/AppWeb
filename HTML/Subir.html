@@ -87,13 +87,13 @@
                     <label for="titulo">Título de la receta:</label>
                     <p>
                     <p>
-                        <input type="text" id="titulo" name="titulo" required>
+                        <input type="text" id="titulo" name="titulo" >
                 </div>
                 <div class="form-group">
                     <label for="autor">Autor:</label>
                     <p>
                     <p>
-                        <input type="text" id="autor" name="autor" required>
+                        <input type="text" id="autor" name="autor" >
                 </div>
             </div>
 
@@ -102,13 +102,13 @@
                     <label for="personas">Cantidad de personas:</label>
                     <p>
                     <p>
-                        <input type="number" id="personas" name="personas" min="1" required>
+                        <input type="number" id="personas" name="personas" min="1" >
                 </div>
                 <div class="form-group">
                     <label for="tiempo">Tiempo de preparación (minutos):</label>
                     <p>
                     <p>
-                        <input type="number" id="tiempo" name="tiempo" min="1" required>
+                        <input type="number" id="tiempo" name="tiempo" min="1" >
                 </div>
                 <div class="form-group">
                     <label for="dificultad">Nivel de dificultad:</label>
@@ -126,7 +126,7 @@
                 <label for="imagen-receta">Imagen de la receta:</label>
                 <p>
                 <p>
-                    <input type="file" id="imagen-receta" name="imagen-receta" accept="image/*">
+                    <input type="file" id="imagen-receta" name="imagen-receta" accept=".jpg, .jpeg, .png">
             </div>
 
             <div class="form-row">
@@ -134,7 +134,7 @@
                     <label for="ingredientes">Ingredientes:</label>
                     <p>
                     <p>
-                        <textarea id="ingredientes" name="ingredientes" rows="5" required></textarea>
+                        <textarea id="ingredientes" name="ingredientes" rows="5" ></textarea>
                 </div>
                 <div class="form-group">
                     <label for="tips">Tips para el usuario:</label>
@@ -148,20 +148,22 @@
                 <label for="imagenes-apoyo">Imágenes de Apoyo:</label>
                 <p>
                 <p>
-                    <input type="file" id="imagenes-apoyo" name="imagenes-apoyo" accept="image/*" multiple>
+                    <input type="file" id="imagenes-apoyo" name="imagenes-apoyo" accept=".jpg, .jpeg, .png" multiple>
             </div>
 
             <div class="form-group">
                 <label for="preparacion">Preparación:</label>
                 <p>
                 <p>
-                    <textarea id="preparacion" name="preparacion" rows="7" required></textarea>
+                    <textarea id="preparacion" name="preparacion" rows="7" ></textarea>
             </div>
 
             <div class="btn-container">
                 <button type="submit" class="btn-subir">Subir Receta</button>
             </div>
         </form>
+        <!-- Script de validacion -->
+        <script src="../JavaScript/validacion-SubirReceta.js"></script> 
     </main>
 
     <body>
