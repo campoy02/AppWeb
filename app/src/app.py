@@ -2,6 +2,8 @@ from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
+####### Solo poner las rutas que llevan a las paginas principales aqui #######
+
 @app.route("/")
 def index():
     return render_template("public/index.html")
@@ -46,8 +48,16 @@ def subir():
 def tienda():
     return render_template("public/tienda.html")
 
+##############################################################################
+
+##               El resto del desmadre ponerlo aqui                         ## 
 
 
 
+##############################################################################
+
+
+
+#No poner nada debajo de main#
 if __name__ == "__main__":
     app.run(debug=True)
