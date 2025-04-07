@@ -9,10 +9,10 @@ function loadCartFromLocalStorage() {
 }
 
 const products = [
-    { name: "Libros Oficiales", price: 300, image: "../imagenes/Libro.jpg" , id: 1, quantity: 1,},
-    { name: '<a href="Camiseta.html">Camisetas Oficiales</a>', price: 150, image: "../imagenes/Camisa.jpg", id: 2, quantity: 1 },
-    { name: "Utencilios oficiales", price: 250, image: "../imagenes/Utencilios.jpg", id: 3, quantity: 1, },
-    { name: "Manteles Oficiales", price: 150, image: "../imagenes/Manteles.jpg", id: 4, quantity: 1, },
+    { name: "Libros Oficiales", price: 300, image: "../../static/img/Libro.jpg" , id: 1, quantity: 1,},
+    { name: '<a href="/camiseta"> Camisetas Oficiales</a>', price: 150, image: "../../static/img/Camisa.jpg", id: 2, quantity: 1 },
+    { name: "Utencilios oficiales", price: 250, image: "../../static/img/Utencilios.jpg", id: 3, quantity: 1, },
+    { name: "Manteles Oficiales", price: 150, image: "../../static/img/Manteles.jpg", id: 4, quantity: 1, },
   ];
   
 
