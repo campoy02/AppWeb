@@ -8,9 +8,9 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../CSS/Encabezado.css">
-    <link rel="stylesheet" href="../CSS/galeria.css">
-    <link rel="stylesheet" href="../CSS/PieDePagina.css">
+    <link rel="stylesheet" href="../../static/css/Encabezado.css">
+    <link rel="stylesheet" href="../../static/css/galeria.css">
+    <link rel="stylesheet" href="../../static/css/PieDePagina.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Slab:wght@400;700&display=swap"
         rel="stylesheet">
@@ -30,7 +30,7 @@
                 Recetitas <span>Blog</span>
             </h1>
             <!-- Logo -->
-            <img src="../Imagenes/logo.png" alt="Logo Recetitas" class="logo position-absolute top-0 end-0 m-2"
+            <img src="../../static/img/logo.png" alt="Logo Recetitas" class="logo position-absolute top-0 end-0 m-2"
                 style="width: 60px; opacity: 0.8; border-radius: 20%; background: rgba(255, 255, 255, 0.5); padding: 5px;">
         </div>
     </header>
@@ -40,28 +40,25 @@
         <div class="container-fluid">
             <!-- Enlaces de navegación -->
             <div class="navbar-nav me-auto mb-2 mb-lg-0">
-                <a class="nav-link text-dark fs-5 fw-bold me-4" href="index.html">Inicio</a>
+                <a class="nav-link text-dark fs-5 fw-bold me-4" href="{{url_for('inicio')}}">Inicio</a>
                 <!-- Menú desplegable "Mi Perfil" -->
                 <div class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-dark fs-5 fw-bold me-4" href="#" id="navbarDropdown"
-                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle text-dark fs-5 fw-bold me-4" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Mi Perfil
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="perfil.html">Mi Perfil</a></li>
-                        <li><a class="dropdown-item" href="Favoritos.html">Favoritos</a></li>
-                        <li><a class="dropdown-item" href="Historial.html">Historial</a></li>
+                        <li><a class="dropdown-item" href="{{url_for('perfil')}}">Mi Perfil</a></li>
+                        <li><a class="dropdown-item" href="{{url_for('favoritos')}}">Favoritos</a></li>
+                        <li><a class="dropdown-item" href="{{url_for('historial')}}">Historial</a></li>
                     </ul>
                 </div>
-                <a class="nav-link text-dark fs-5 fw-bold me-4" href="Subir.html">Subir Receta</a>
-                <a class="nav-link text-dark fs-5 fw-bold me-4" href="tienda.html">Tienda Oficial</a>
+                <a class="nav-link text-dark fs-5 fw-bold me-4" href="{{url_for('subir')}}">Subir Receta</a>
+                <a class="nav-link text-dark fs-5 fw-bold me-4" href="{{url_for('tienda')}}">Tienda Oficial</a>
             </div>
             <!-- Caja de búsqueda -->
             <form class="d-flex search-box bg-white bg-opacity-90 p-2 rounded">
-                <input class="search-input form-control border-0 bg-transparent font-lobster fs-6" type="text"
-                    placeholder="Hey, ¿Listo para cocinar?" aria-label="Search">
-                <button class="search-btn btn btn-link text-dark fs-5 p-0" type="submit"> <a
-                        href="Resultados.html">🔍</a></button>
+                <input class="search-input form-control border-0 bg-transparent font-lobster fs-6" type="text" placeholder="Hey, ¿Listo para cocinar?" aria-label="Search">
+                <button class="search-btn btn btn-link text-dark fs-5 p-0" type="submit"> <a href="{{url_for('resultados')}}">🔍</a></button>
             </form>
         </div>
     </nav>
@@ -73,28 +70,28 @@
         <h1>Resultado para tus búsquedas</h1>
         <div class="recipes-container">
             <div class="recipe-card">
-                <a href="Recetas.html"><img src="../Imagenes/filete.jpg" alt="Filete Asado"></a>
+                <a href="{{url_for('recetas')}}"><img src="../../static/img/filete.jpg" alt="Filete Asado"></a>
                 <div class="recipe-info">
                     <h3>Filete Asado</h3>
                     <p>Receta deliciosa de filete asado.</p>
                 </div>
             </div>
             <div class="recipe-card">
-                <a href="Recetas.html"><img src="../Imagenes/lasaña.jpg" alt="Lasaña Clásica">
+                <a href="{{url_for('recetas')}}"><img src="../../static/img/lasaña.jpg" alt="Lasaña Clásica">
                     <div class="recipe-info">
                         <h3>Lasaña Clásica</h3>
                         <p>Receta de lasaña tradicional.</p>
                     </div>
             </div>
             <div class="recipe-card">
-                <a href="Recetas.html"></a><img src="../Imagenes/ramen.jpg" alt="Ramen Clásico">
+                <a href="{{url_for('recetas')}}"></a><img src="../../static/img/ramen.jpg" alt="Ramen Clásico">
                 <div class="recipe-info">
                     <h3>Ramen Clásico</h3>
                     <p>Receta auténtica de ramen.</p>
                 </div>
             </div>
             <div class="recipe-card">
-                <img src="../Imagenes/taco.jpg" alt="Tacos Mexicanos">
+                <img src="../../static/img/taco.jpg" alt="Tacos Mexicanos">
                 <div class="recipe-info">
                     <h3>Tacos Mexicanos</h3>
                     <p>Receta de tacos con carne.</p>
@@ -102,49 +99,49 @@
             </div>
 
             <div class="recipe-card">
-                <img src="../Imagenes/frituras2.jpg" alt="Filete Asado">
+                <img src="../../static/img/frituras2.jpg" alt="Filete Asado">
                 <div class="recipe-info">
                     <h3>Receta de frituras</h3>
                     <p>Receta deliciosa de frituras asado.</p>
                 </div>
             </div>
             <div class="recipe-card">
-                <img src="../Imagenes/bebidaD.jpg" alt="Lasaña Clásica">
+                <img src="../../static/img/bebidaD.jpg" alt="Lasaña Clásica">
                 <div class="recipe-info">
                     <h3>Bebidas</h3>
                     <p>Receta para bebidas</p>
                 </div>
             </div>
             <div class="recipe-card">
-                <img src="../Imagenes/bebidaT.jpg" alt="Ramen Clásico">
+                <img src="../../static/img/bebidaT.jpg" alt="Ramen Clásico">
                 <div class="recipe-info">
                     <h3>Bebida fria</h3>
                     <p>Receta para una bebida fria chocolate.</p>
                 </div>
             </div>
             <div class="recipe-card">
-                <img src="../Imagenes/chilerelleno.jpeg" alt="Tacos Mexicanos">
+                <img src="../../static/img/chilerelleno.jpeg" alt="Tacos Mexicanos">
                 <div class="recipe-info">
                     <h3>Chiles rellenos Mexicanos</h3>
                     <p>Receta de chiles rellenos con carne.</p>
                 </div>
             </div>
             <div class="recipe-card">
-                <img src="../Imagenes/postre3.jpg" alt="Lasaña Clásica">
+                <img src="../../static/img/postre3.jpg" alt="Lasaña Clásica">
                 <div class="recipe-info">
                     <h3>Postre de chocolate</h3>
                     <p>Receta para postre de chocolate horneado.</p>
                 </div>
             </div>
             <div class="recipe-card">
-                <img src="../Imagenes/postre4.jpg" alt="Ramen Clásico">
+                <img src="../../static/img/postre4.jpg" alt="Ramen Clásico">
                 <div class="recipe-info">
                     <h3>Postre dulce</h3>
                     <p>Receta postre frio de temporada.</p>
                 </div>
             </div>
             <div class="recipe-card">
-                <img src="../Imagenes/desayuno3.jpg" alt="Tacos Mexicanos">
+                <img src="../../static/img/desayuno3.jpg" alt="Tacos Mexicanos">
                 <div class="recipe-info">
                     <h3>Tacos Mexicanos</h3>
                     <p>Receta de tacos con carne.</p>
@@ -152,28 +149,28 @@
             </div>
 
             <div class="recipe-card">
-                <img src="../Imagenes/desayuno5.jpg" alt="Filete Asado">
+                <img src="../../static/img/desayuno5.jpg" alt="Filete Asado">
                 <div class="recipe-info">
                     <h3>Avenas</h3>
                     <p>Receta para desayuno de avenas.</p>
                 </div>
             </div>
             <div class="recipe-card">
-                <img src="../Imagenes/desayuno2.jpg" alt="Lasaña Clásica">
+                <img src="../../static/img/desayuno2.jpg" alt="Lasaña Clásica">
                 <div class="recipe-info">
                     <h3>Desayuno nutritivo</h3>
                     <p>Receta para desayuno vegano con frutas.</p>
                 </div>
             </div>
             <div class="recipe-card">
-                <img src="../Imagenes/ramen.jpg" alt="Ramen Clásico">
+                <img src="../../static/img/ramen.jpg" alt="Ramen Clásico">
                 <div class="recipe-info">
                     <h3>Ramen Clásico</h3>
                     <p>Receta auténtica de ramen.</p>
                 </div>
             </div>
             <div class="recipe-card">
-                <img src="../Imagenes/taco.jpg" alt="Tacos Mexicanos">
+                <img src="../../static/img/taco.jpg" alt="Tacos Mexicanos">
                 <div class="recipe-info">
                     <h3>Tacos Mexicanos</h3>
                     <p>Receta de tacos con carne.</p>
@@ -209,7 +206,7 @@
             <p>Encuéntranos en:</p>
             <p>Río Pantitlán 4632, Colonia Américas 25843, Méxicali, Baja California, México.</p>
             <p>Contacto: +52 686 323 7433</p>
-            <p><a class="HipertextoFooter" href="../HTML/Formulario.html">Manda un mensaje a los desarrolladores</a></p>
+            <p><a class="HipertextoFooter" href="{{url_for('formulario')}}">Manda un mensaje a los desarrolladores</a></p>
         </div>
     </footer>
 

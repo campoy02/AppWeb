@@ -32,7 +32,7 @@ body {
     position: relative;
     width: 99%;
     height: 500px;
-    background-image: url('../Imagenes/tusrecetas.png');
+    background-image: url('../img/tusrecetas.png');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -385,7 +385,7 @@ p {
   width: 80%;
   height: 450px;
   margin: 40px auto;
-  background-image: url('../Imagenes/temporada.png'); /* Cambia por tu imagen */
+  background-image: url('../img/temporada.png'); /* Cambia por tu imagen */
   background-size: cover;
   background-position: bottom center;
   border-radius: 15px;

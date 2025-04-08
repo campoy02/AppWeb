@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/Receta.css">
-    <link rel="stylesheet" href="../CSS/PieDePagina.css">
-    <link rel="stylesheet" href="../CSS/Encabezado.css">
+    <link rel="stylesheet" href="../../static/css/Receta.css">
+    <link rel="stylesheet" href="../../static/css/PieDePagina.css">
+    <link rel="stylesheet" href="../../static/css/Encabezado.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
@@ -34,40 +34,37 @@
                 Recetitas <span>Blog</span>
             </h1>
             <!-- Logo -->
-            <img src="../Imagenes/logo.png" alt="Logo Recetitas" class="logo position-absolute top-0 end-0 m-2">
+            <img src="../../static/img/logo.png" alt="Logo Recetitas" class="logo position-absolute top-0 end-0 m-2">
         </div>
     </header>
-
     <!-- Barra de navegación -->
     <nav class="nav-bar navbar navbar-expand-lg navbar-light bg-brown py-3">
         <div class="container-fluid">
             <!-- Enlaces de navegación -->
             <div class="navbar-nav me-auto mb-2 mb-lg-0">
-                <a class="nav-link text-dark fs-5 fw-bold me-4" href="index.html">Inicio</a>
+                <a class="nav-link text-dark fs-5 fw-bold me-4" href="{{url_for('inicio')}}">Inicio</a>
                 <!-- Menú desplegable "Mi Perfil" -->
                 <div class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-dark fs-5 fw-bold me-4" href="#" id="navbarDropdown"
-                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle text-dark fs-5 fw-bold me-4" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Mi Perfil
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="perfil.html">Mi Perfil</a></li>
-                        <li><a class="dropdown-item" href="Favoritos.html">Favoritos</a></li>
-                        <li><a class="dropdown-item" href="Historial.html">Historial</a></li>
+                        <li><a class="dropdown-item" href="{{url_for('perfil')}}">Mi Perfil</a></li>
+                        <li><a class="dropdown-item" href="{{url_for('favoritos')}}">Favoritos</a></li>
+                        <li><a class="dropdown-item" href="{{url_for('historial')}}">Historial</a></li>
                     </ul>
                 </div>
-                <a class="nav-link text-dark fs-5 fw-bold me-4" href="Subir.html">Subir Receta</a>
-                <a class="nav-link text-dark fs-5 fw-bold me-4" href="tienda.html">Tienda Oficial</a>
+                <a class="nav-link text-dark fs-5 fw-bold me-4" href="{{url_for('subir')}}">Subir Receta</a>
+                <a class="nav-link text-dark fs-5 fw-bold me-4" href="{{url_for('tienda')}}">Tienda Oficial</a>
             </div>
             <!-- Caja de búsqueda -->
             <form class="d-flex search-box bg-white bg-opacity-90 p-2 rounded">
-                <input class="search-input form-control border-0 bg-transparent font-lobster fs-6" type="text"
-                    placeholder="Hey, ¿Listo para cocinar?" aria-label="Search">
-                <button class="search-btn btn btn-link text-dark fs-5 p-0" type="submit"> <a
-                        href="Resultados.html">🔍</a></button>
+                <input class="search-input form-control border-0 bg-transparent font-lobster fs-6" type="text" placeholder="Hey, ¿Listo para cocinar?" aria-label="Search">
+                <button class="search-btn btn btn-link text-dark fs-5 p-0" type="submit"> <a href="{{url_for('resultados')}}">🔍</a></button>
             </form>
         </div>
     </nav>
+
 
 
     <div class="recipe-container">
@@ -79,7 +76,7 @@
                 <!-- Aquí se puede agregar una barra de estrellas o un sistema de puntuación -->
             </div>
             <div class="recipe-image">
-                <img src="../Imagenes/ramen.jpg" alt="Imagen de la receta">
+                <img src="../../static/img/ramen.jpg" alt="Imagen de la receta">
             </div>
 
             <!-- Tips -->
@@ -103,8 +100,8 @@
             <!-- Imágenes adicionales -->
             <div class="additional-images">
                 <h3 class="titulos">Imágenes de Apoyo</h3>
-                <img src="../Imagenes/ingre1.jpg" alt="Imagen adicional 1">
-                <img src="../Imagenes/ingre2.jpg" alt="Imagen adicional 2">
+                <img src="../../static/img/ingre1.jpg" alt="Imagen adicional 1">
+                <img src="../../static/img/ingre2.jpg" alt="Imagen adicional 2">
             </div>
 
 
@@ -198,13 +195,13 @@
         <p>Siguenos en redes sociales</p>
         <div class="pdpcontenedorimagenes">
             <div class="pdpImg">
-                <img src="../Imagenes/facebook-new.png" alt="Facebook">
+                <img src="../../static/img/facebook-new.png" alt="Facebook">
             </div>
             <div class="pdpImg">
-                <img src="../Imagenes/Twitter.png" alt="Twitter">
+                <img src="../../static/img/Twitter.png" alt="Twitter">
             </div>
             <div class="pdpImg">
-                <img src="../Imagenes/Instagram.jpg" alt="Twitter">
+                <img src="../../static/img/Instagram.jpg" alt="Twitter">
             </div>
         </div>
     </div>
@@ -213,7 +210,7 @@
         <p>Encuentranos en:</p>
         <p>Rio Pantitlan 4632, Colonia Americas 25843, Méxicali, Baja California, México.</p>
         <p>Contacto: +52 686 323 7433</p>
-        <p><a class="HipertextoFooter" href="../HTML/Formulario.html">Manda un mensaje a los desarrolladores</a></p>
+        <p><a class="HipertextoFooter" href="{{url_for('formulario')}}">Manda un mensaje a los desarrolladores</a></p>
     </div>
 </footer>
 
