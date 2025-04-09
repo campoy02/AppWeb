@@ -1,0 +1,10 @@
+El archivo .sql en esta carpeta son los comandos necesarios para crear la base de datos que vamos a usar
+RecetitasBDD.sql tiene los comandos para crear el schema y crear la tabla de usuarios
+tambien tiene las funciones para agregar y verificar usuarios 
+
+Proximamente sera actualizada esta carpeta con otro .sql para las tablas de las paginas web
+Cada quien tiene que correr los scripts .sql en su propia maquina
+De lo contrario las consutas a las bases de datos no van a funcionar y no va a funcionar la pagina 
+
+También se deberá crear un usuario llamado "Python" con la contraseña "123" para la base de datos local
+Esto es para que coincida con las credenciales proporcionadas en "Config.py"

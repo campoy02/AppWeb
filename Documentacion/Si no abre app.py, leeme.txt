@@ -1,0 +1,16 @@
+Para que pueda funcionar el proyecto en tu propia maquina, se necesitan hacer las siguientes cosas:
+
+1.- Activar entorno virtual de Python (CTRL + Shift + P -> Escribir Python -> Seleccionar "Activar Entorno" / "Activate Enviroment")
+
+2.- Escribir en terminal los siguientes comandos:
+
+pip install flask
+pip install flask_login
+pip install flask_mysqldb
+pip install functools
+
+-En caso de que siga sin funcionar, Cerrar y abrir Visual Studio
+Posteriormente, abrir una nueva terminal y escribir los comandos de "pip install" de nuevo 
+A Veces el IDE no reconoce el entorno virtual hasta que haces esto por lo que en ocasiones es necesario hacerlo 
+
+Si de plano asi no funciona, preguntale a Google, CoPilot , chatGPT, a Dios, a Buddha o no sé
