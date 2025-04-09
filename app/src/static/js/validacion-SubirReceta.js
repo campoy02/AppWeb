@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const formulario = document.querySelector(".form-subir");
-    const tituloSubirReceta = document.querySelector("h2"); 
+    const tituloSubirReceta = document.querySelector("h2");
 
     // Función para mostrar errores
     function mostrarError(id, mensaje) {
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (valido) {
             if (tituloSubirReceta) {
-                tituloSubirReceta.style.display = "none"; 
+                tituloSubirReceta.style.display = "none";
             }
             formulario.innerHTML = "<p style='color: green; font-size: 18px; text-align: center;'>La receta se subió correctamente. Recargando en 5 segundos.</p>";
             setTimeout(() => location.reload(), 5000);
