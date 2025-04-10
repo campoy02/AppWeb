@@ -2,7 +2,7 @@ from flask import Flask, abort, flash, redirect, request, render_template, url_f
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from functools import wraps
 from flask_mysqldb import MySQL
-from Config import config 
+from Config import config
 from models.ModelUsers import ModelUsers
 from models.entities.users import User
 
@@ -69,6 +69,7 @@ def subir():
 def tienda():
     return render_template("public/tienda.html")
 
+
 @app.route("/logout")
 @login_required
 def logout():
@@ -76,13 +77,12 @@ def logout():
     return redirect(url_for("login"))
 
 
-
 @app.route("/login", methods=["GET", "POST"])
 def login():
- 
+
     if request.method == "POST":
-        #Pa checar si es el formulario de registro
-        if "RegNombre" in request.form:  
+        # Pa checar si es el formulario de registro
+        if "RegNombre" in request.form:
             nombre = request.form["RegNombre"]
             passw = request.form["RegPass"]
             fullname = request.form["RegNCom"]
@@ -92,9 +92,10 @@ def login():
             ModelUsers.registrar(db, user)
             flash("Registro exitoso", "success")
             return render_template("auth/login.html")
-        #Pa checar si es el formulario de login
-        elif "username" in request.form:  
-            user = User(0, request.form['username'], request.form['password'], 0, 0)
+        # Pa checar si es el formulario de login
+        elif "username" in request.form:
+            user = User(0, request.form['username'],
+                        request.form['password'], 0, 0)
             logged_user = ModelUsers.login(db, user)
             if logged_user is not None:
                 login_user(logged_user)
@@ -114,9 +115,11 @@ def login():
 
 ##############################################################################
 
-##               El resto del desmadre ponerlo aqui                         ## 
+##               El resto del desmadre ponerlo aqui                         ##
 
 ## Funcion para validar que el usuario sea admin, se utiliza en las rutas que necesiten acceso de admin ##
+
+
 def admin_required(func):
     @wraps(func)
     def decorated_view(*args, **kwargs):
@@ -131,7 +134,8 @@ def admin_required(func):
 def load_user(id):
     return ModelUsers.get_by_id(db, id)
 
-#Cualquier ruta que requiera permisos de administrador debe de ir debajo de esta linea# 
+# Cualquier ruta que requiera permisos de administrador debe de ir debajo de esta linea#
+
 
 @app.route("/admin")
 @admin_required
