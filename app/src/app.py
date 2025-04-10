@@ -105,7 +105,8 @@ def pruebaupload():
 def subir():
     if request.method == "POST":
         img = request.files['imagen-receta']  
-        print(img)
+        img2 = request.files['imagenes-apoyo'] 
+
         nombre = request.form['titulo']
         autor = request.form['autor']
         cantidadpersonas = request.form['personas']
@@ -117,7 +118,7 @@ def subir():
         
 
 
-        if img and img.filename != '':
+        if img and img.filename and img2 and img2.filename != '':
             # Ensure the upload directory exists
             if not os.path.exists(app.config['UPLOAD_PATH']):
                 os.makedirs(app.config['UPLOAD_PATH'])
@@ -126,22 +127,29 @@ def subir():
 
             numero = randint(1,1000)
             id = current_user.id
+
             nombrearchivo = (str(numero)+str(id))
             custom_filename =  nombrearchivo  # Change this to your desired filename
-            print (custom_filename)
             file_extension = os.path.splitext(img.filename)[1]  # Get the original file extension
             new_filename = f"{custom_filename}{file_extension}"  # Combine custom name with the original extension
             
+            nombrearchivo2 = (nombrearchivo + "apoyo")
+            extension2 = os.path.splitext(img2.filename)[1]
+            nombreimg2 = f"{nombrearchivo2}{extension2}"
+
             # Save the file in the specified upload directory
             file_path = os.path.join(app.config['UPLOAD_PATH'], secure_filename(new_filename))
             img.save(file_path)
 
-            Pagina = pagina(nombre, autor, cantidadpersonas, tiempo, dificultad, ingredientes, tips, preparacion, file_path, "Ruta", current_user.id, 0)
+            file_path2 = os.path.join(app.config["UPLOAD_PATH"],secure_filename(nombreimg2))
+            img2.save(file_path2)
+
+            Pagina = pagina(0,nombre, autor, cantidadpersonas, tiempo, dificultad, ingredientes, tips, preparacion, file_path, file_path2, current_user.id, 0)
             print (Pagina)
             ModelPagina.agregar(db,Pagina)
             
         flash("Recipe uploaded successfully!", "success")
-        return redirect(url_for('Subir'))
+        return redirect(url_for('subir'))
 
     return render_template("public/Subir.html")
 
