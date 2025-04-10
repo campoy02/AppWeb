@@ -1,14 +1,33 @@
-El archivo .sql en esta carpeta son los comandos necesarios para crear la base de datos que vamos a usar
-RecetitasBDD.sql tiene los comandos para crear el schema y crear la tabla de usuarios
-tambien tiene las funciones para agregar y verificar usuarios 
+Las instrucciones para importar y utilizar la base de datos estan escritas asumiendo que el usuario utiliza
+MySQL Workbench para trabajar con la base de datos.
 
-Proximamente sera actualizada esta carpeta con otro .sql para las tablas de las paginas web
-Cada quien tiene que correr los scripts .sql en su propia maquina
-De lo contrario las consutas a las bases de datos no van a funcionar y no va a funcionar la pagina 
+Para crear el usuario
 
-También se deberá crear un usuario llamado "Python" con la contraseña "123" para la base de datos local
-Esto es para que coincida con las credenciales proporcionadas en "Config.py"
+1.-El primer paso para poder utilizar la base de datos es dar click en "+" en la seccion que dice "MySQL Connections"
 
-La carpeta que dice importar contiene la BDD con entradas ya hechas 
+2.-Se abrira una interfaz, en "Connection Name" se puede colocar cualquier nombre 
 
-El archivo RecetitasRecetaBDD.sql tiene los comandos para hacer las tablas de la pagina de recetas
+3.-"Hostname" y "Port" se dejaran igual
+
+4.-Username: Python 
+
+5.-Password -> Dar click en store in vault -> 123 
+
+6.-Dar click en OK 
+
+7.-Ingresar a la base de datos a traves de el usuario creado 
+
+Para importar la base de datos que esta en la carpeta llamada BASE DE DATOS(Importar)
+1.-Una vez dentro, Click en Server 
+
+2.-Data Import 
+
+3.- Click en "..." y buscar la carpeta de este proyecto 
+
+4.- Elegir la carpeta llamada "BASE DE DATOS(Importar)"
+
+5.-En el recuadro izquierdo debe de aparecer un schema llamado "tiendarecetitas"
+
+6.-Click en Start Import 
+
+7.-La base de datos ya está importada, ya no es necesario mover nada
