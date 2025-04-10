@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Recipes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>All Recipes</h1>
+        
+        {% if recetas %}
+            <h2>First Recipe</h2>
+            <div class="card mb-4">
+                <img src="{{ recetas[0][9] }}" class="card-img-top" alt="First Recipe Image">  <!-- Assuming the image path is at index 9 -->
+                <div class="card-body">
+                    <h5 class="card-title">{{ recetas[0][1] }}</h5>  <!-- Assuming title is at index 1 -->
+                    <p class="card-text">Author: {{ recetas[0][2] }}</p>  <!-- Assuming author is at index 2 -->
+                    <p class="card-text">Preparation Time: {{ recetas[0][5] }}</p>  <!-- Assuming preparation time is at index 5 -->
+                    <p class="card-text">Ingredients: {{ recetas[0][6] }}</p>  <!-- Assuming ingredients are at index 6 -->
+                    <p class="card-text">Tips: {{ recetas[0][7] }}</p>  <!-- Assuming tips are at index 7 -->
+                </div>
+            </div>
+
+            <h2>All Recipes</h2>
+            <ul class="list-group">
+                {% for recipe in recetas %}
+                    <li class="list-group-item">
+                        <h5>{{ recipe[1] }}</h5>  <!-- Assuming title is at index 1 -->
+                        <p>Author: {{ recipe[2] }}</p>  <!-- Assuming author is at index 2 -->
+                        <p><a href="{{ recipe[9] }}" target="_blank">View Image</a></p>  <!-- Assuming image path is at index 9 -->
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No recipes found.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
