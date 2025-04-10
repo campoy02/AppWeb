@@ -43,21 +43,25 @@
             <div class="container-fluid">
                 <!-- Enlaces de navegación -->
                 <div class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <a class="nav-link text-dark fs-5 fw-bold me-4" href="{{url_for('inicio')}}">Inicio</a>
-                    <!-- Menú desplegable "Mi Perfil" -->
-                    <div class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-dark fs-5 fw-bold me-4" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Mi Perfil
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{{url_for('perfil')}}">Mi Perfil</a></li>
-                            <li><a class="dropdown-item" href="{{url_for('favoritos')}}">Favoritos</a></li>
-                            <li><a class="dropdown-item" href="{{url_for('historial')}}">Historial</a></li>
-                        </ul>
+  
+                    <a class="nav-btn" href="{{ url_for('index') }}">Inicio</a>
+                  
+                    <div class="dropdown">
+                      <a class="nav-btn dropdown-toggle" href="#" role="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        Mi Perfil
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="{{ url_for('perfil') }}">Mi Perfil</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('favoritos') }}">Favoritos</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('historial') }}">Historial</a></li>
+                      </ul>
                     </div>
-                    <a class="nav-link text-dark fs-5 fw-bold me-4" href="{{url_for('subir')}}">Subir Receta</a>
-                    <a class="nav-link text-dark fs-5 fw-bold me-4" href="{{url_for('tienda')}}">Tienda Oficial</a>
-                </div>
+                  
+                    <a class="nav-btn" href="{{ url_for('subir') }}">Subir Receta</a>
+                    <a class="nav-btn" href="{{ url_for('tienda') }}">Tienda Oficial</a>
+                    <a class="nav-btn" href="{{ url_for('login') }}">Registrarse</a>
+                  
+                  </div>
                 <!-- Caja de búsqueda -->
                 <form class="d-flex search-box bg-white bg-opacity-90 p-2 rounded">
                     <input class="search-input form-control border-0 bg-transparent font-lobster fs-6" type="text" placeholder="Hey, ¿Listo para cocinar?" aria-label="Search">
