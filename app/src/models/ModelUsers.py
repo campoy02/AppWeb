@@ -7,6 +7,7 @@ from .entities.users import User
 # Ambos metodos reciben db como parametros, Para el caso de este proyecto, ese parametro siempre debe ponerse como "db" cada que llames el metodo en app.py #
 
 class ModelUsers():
+    #Metodo para verificar las credenciales para el inicio de sesion
     @classmethod
     def login(self, db, user):
         try:
@@ -23,18 +24,31 @@ class ModelUsers():
                 return None
         except Exception as ex:
             raise Exception(ex)
-        
+    # Metodo para obtener informacion de un usuario a traves de su ID
     @classmethod
     def get_by_id(cls, db, id):
         try:
             cursor = db.connection.cursor()
             cursor.execute(
-                "SELECT id, username, usertype, fullname FROM users WHERE id = %s", (id,)
+                "SELECT * FROM users WHERE id = %s", (id,)
             )
             row = cursor.fetchone()
             if row is not None:
-                return User(row[0], row[1], None, row[2], row[3])
+                return User(row[0], row[1], row[2], row[4], row[3])
             else:
                 return None
+        except Exception as ex:
+            raise Exception(ex)
+    # Metodo para registrar nuevos usuarios
+    @classmethod
+    def registrar(self, db, user):
+        try:
+            cursor = db.connection.cursor()
+            cursor.execute(
+                "call sp_AddUser(%s, %s, %s, %s, %s)",
+                (user.username, user.password,user.fullname, 0, user.email)
+            )
+            db.connection.commit()
+            return True
         except Exception as ex:
             raise Exception(ex)

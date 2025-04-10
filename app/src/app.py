@@ -79,20 +79,36 @@ def logout():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+ 
     if request.method == "POST":
-        user = User(0, request.form['username'], request.form['password'], 0)
-        logged_user = ModelUsers.login(db, user)
-        if logged_user != None:
-            login_user(logged_user)
+        #Pa checar si es el formulario de registro
+        if "RegNombre" in request.form:  
+            nombre = request.form["RegNombre"]
+            passw = request.form["RegPass"]
+            fullname = request.form["RegNCom"]
+            mail = request.form["RegMail"]
 
-            if logged_user.usertype == 1:
-                #Pendiente: Modificar el html de admin para que se vea decente, agregar panel de control#
-                return redirect(url_for("admin"))
-            else:
-                return redirect(url_for("inicio"))
-        else:
-            flash("Acceso rechazado...", "danger")
+            user = User(0, nombre, passw, 0, fullname, mail)
+            ModelUsers.registrar(db, user)
+            flash("Registro exitoso", "success")
             return render_template("auth/login.html")
+        #Pa checar si es el formulario de login
+        elif "username" in request.form:  
+            user = User(0, request.form['username'], request.form['password'], 0, 0)
+            logged_user = ModelUsers.login(db, user)
+            if logged_user is not None:
+                login_user(logged_user)
+
+                if logged_user.usertype == 1:
+                    # Pendiente: Modificar el html de admin para que se vea decente, agregar panel de control
+                    flash("Bienvenido administrador", "success")
+                    return redirect(url_for("admin"))
+                else:
+                    flash("Inicio de sesion exitoso", "success")
+                    return redirect(url_for("inicio"))
+            else:
+                flash("Acceso rechazado...", "danger")
+                return render_template("auth/login.html")
     else:
         return render_template("auth/login.html")
 
