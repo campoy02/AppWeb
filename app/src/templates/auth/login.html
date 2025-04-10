@@ -1,83 +1,65 @@
 {% extends './base.html' %}
 
 {% block miCSS %}
-<link
-  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="../../static/css/Login.css">
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/Login.css') }}">
 {% endblock %}
 
 {% block titulo %}Recetitas - Login{% endblock %}
 
 {% block cuerpo %}
-  <!-- Mensajes Flash -->
-  {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-      <ul>
-        {% for category, message in messages %}
-          <li class="alert alert-{{ category }}">{{ message }}</li>
-        {% endfor %}
-      </ul>
-    {% endif %}
-  {% endwith %}
-<div class="DivLogin">
-  <!-- Formulario de Login -->
-  <form action="/login" method="POST">
-    <!-- Username input -->
-    <div data-mdb-input-init class="form-outline mb-4">
-      <input type="text" id="form2Example1" class="form-control" name="username" />
-      <label class="form-label" for="form2Example1">Usuario</label>
-    </div>
-  
-    <!-- Password input -->
-    <div data-mdb-input-init class="form-outline mb-4">
-      <input type="password" id="form2Example2" class="form-control" name="password" />
-      <label class="form-label" for="form2Example2">Contraseña</label>
-    </div>
-  
-    <!-- 2 column grid layout for inline styling -->
-    <div class="row mb-4">
-      <div class="col d-flex justify-content-center">
-        <!-- Checkbox -->
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
-          <label class="form-check-label" for="form2Example31"> Remember me </label>
-        </div>
-      </div>
-  
-      <div class="col">
-        <!-- Simple link -->
-        <a href="#!">Forgot password?</a>
-      </div>
-    </div>
-  
-    <!-- Submit button -->
-    <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Sign in</button>
-  
-    <!-- Register buttons -->
-    <div class="text-center">
-      <p>Not a member? <a href="#!">Register</a></p>
-      <p>or sign up with:</p>
-      <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
-        <i class="fab fa-facebook-f"></i>
-      </button>
-  
-      <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
-        <i class="fab fa-google"></i>
-      </button>
-  
-      <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
-        <i class="fab fa-twitter"></i>
-      </button>
-  
-      <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
-        <i class="fab fa-github"></i>
-      </button>
-    </div>
-  </form>  
-</div>
-  <script
-    type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"
-  ></script>
+<div class="login-wrapper">
+<div class="container" id="container">
 
+  <!-- Registro -->
+  <div class="form-container sign-up-container">
+    <form action="/register" method="POST">
+      <h1 class="lobster">Crear cuenta</h1>
+      <input type="text" name="name" placeholder="Nombre" required />
+      <input type="email" name="email" placeholder="Correo" required />
+      <div class="password-wrapper">
+        <input type="password" name="password" id="register-password" placeholder="Contraseña" required />
+        <span class="toggle-password" onclick="togglePassword('register-password', this)">👁️</span>
+      </div>
+      
+      
+      <button type="submit">Registrarse</button>
+    </form>
+  </div>
+
+  <!-- Login -->
+  <div class="form-container sign-in-container">
+    <form action="/login" method="POST">
+      <h1 class="lobster">Iniciar sesión</h1>
+      <input type="text" name="username" placeholder="Usuario" required />
+      <div class="password-wrapper">
+        <input type="password" name="password" id="login-password" placeholder="Contraseña" required />
+        <span class="toggle-password" onclick="togglePassword('login-password', this)">👁️</span>
+      </div>
+      
+      
+      <a href="#">¿Olvidaste tu contraseña?</a>
+      <button type="submit">Ingresar</button>
+    </form>
+  </div>
+
+  <!-- Panel de animación -->
+  <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-panel overlay-left">
+        <h1 class="lobster">¡Bienvenido de nuevo!</h1>
+        <p>Ingresa con tus datos para continuar disfrutando del blog</p>
+        <button class="ghost" id="signIn">Iniciar sesión</button>
+      </div>
+      <div class="overlay-panel overlay-right">
+        <h1 class="lobster">¿Eres nuevo por aqui?</h1>
+        <p>Regístrate para empezar a compartir tus mejores recetas</p>
+        <button class="ghost" id="signUp">Registrarse</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
 {% endblock %}

@@ -1,3 +1,241 @@
-.DivLogin{
-    padding: 20px;
+/* ==== GENERAL ==== */
+* {
+  box-sizing: border-box;
 }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: white;
+  color: #000;
+}
+
+/* ==== CONTENEDOR GENERAL ==== */
+.login-wrapper {
+    margin-top: 50px;         /* <-- crea el espacio deseado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    min-height: calc(100vh - 350px); /* ajusta según el tamaño del header + footer */
+    padding: 40px 20px;
+  }
+
+  .container {
+    background-color: antiquewhite;
+    width: 1150px; /* Aumentado desde 850px o 900px */
+    max-width: 100%;
+    min-height: 500px;
+    display: flex;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25),
+                0 10px 10px rgba(0,0,0,0.22);
+    margin: 40px auto; /* añade separación desde arriba */
+    overflow: hidden;
+    border-radius: 15px;
+    position: relative;
+  }
+  
+
+/* ==== FORMULARIOS ==== */
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 50px;
+  text-align: center;
+  width: 50%;
+  z-index: 2;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+input {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+  border-radius: 5px;
+}
+
+/* ==== BOTONES ==== */
+button {
+  border: none;
+  border-radius: 25px;
+  padding: 12px 45px;
+  background-color: #8B1538;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+button.ghost {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+/* ==== SIGN IN ==== */
+.sign-in-container {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+/* ==== SIGN UP ==== */
+.sign-up-container {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+/* ==== ANIMACIÓN ==== */
+#container.right-panel-active .sign-up-container {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+}
+
+#container.right-panel-active .sign-in-container {
+  transform: translateX(100%);
+  opacity: 0;
+  z-index: 1;
+}
+
+/* ==== OVERLAY ==== */
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 100;
+  transition: transform 0.6s ease-in-out;
+}
+
+.overlay {
+  background: #c42454;
+  color: #fff;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+#container.right-panel-active .overlay-container {
+  transform: translateX(-100%);
+}
+
+#container.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+
+.overlay-panel {
+    padding: 0 40px;
+    max-width: 480px;
+    text-align: center;
+  }
+  
+
+
+.overlay-left {
+  transform: translateX(-20%);
+  left: 0;
+}
+
+.overlay-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+/* ==== TIPOGRAFÍA ==== */
+h1.lobster {
+  font-family: 'Lobster', cursive;
+  color: #5E3119;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 0.95em;
+  margin-top: 5px;
+}
+
+.sign-in-container h1,
+.sign-up-container h1 {
+  font-family: 'Lobster', cursive;
+  color: #5E3119;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+form input {
+    max-width: 350px;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #f3f3f3;
+  }
+  
+  form button {
+    padding: 10px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 25px;
+    margin-top: 10px;
+    width: 180px;
+  }
+
+  .password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .password-wrapper input {
+    width: 100%;
+    padding-right: 140px; /* Espacio para el icono */
+  }
+  
+  .toggle-password {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 1.2em;
+    color: #5E3119;
+  }
+  
+  
