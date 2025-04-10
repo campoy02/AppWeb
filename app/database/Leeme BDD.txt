@@ -8,3 +8,7 @@ De lo contrario las consutas a las bases de datos no van a funcionar y no va a f
 
 También se deberá crear un usuario llamado "Python" con la contraseña "123" para la base de datos local
 Esto es para que coincida con las credenciales proporcionadas en "Config.py"
+
+La carpeta que dice importar contiene la BDD con entradas ya hechas 
+
+El archivo RecetitasRecetaBDD.sql tiene los comandos para hacer las tablas de la pagina de recetas

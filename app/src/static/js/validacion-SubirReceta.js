@@ -99,13 +99,13 @@ document.addEventListener("DOMContentLoaded", function () {
             mostrarError(campo, errores[campo]);
         }
 
-        if (valido) {
+    /*    if (valido) {
             if (tituloSubirReceta) {
                 tituloSubirReceta.style.display = "none";
             }
             formulario.innerHTML = "<p style='color: green; font-size: 18px; text-align: center;'>La receta se subió correctamente. Recargando en 5 segundos.</p>";
             setTimeout(() => location.reload(), 5000);
-        }
+        }*/
     });
 
     document.querySelectorAll("input, textarea, select").forEach(campo => {

@@ -1,14 +1,25 @@
+import os
+from random import randint
 from flask import Flask, abort, flash, redirect, request, render_template, url_for
+from werkzeug.utils import secure_filename
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from functools import wraps
 from flask_mysqldb import MySQL
 from Config import config 
 from models.ModelUsers import ModelUsers
 from models.entities.users import User
+from models.ModelPaginas import ModelPagina
+from models.entities.pagina import pagina
 
 app = Flask(__name__)
 db = MySQL(app)
 login_manager_app = LoginManager(app)
+app.config['UPLOAD_PATH'] = 'app/src/static/uploads'
+app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg'}
+
+####### Maneja los archivos aceptados para las imagenes                #######
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
 
 ####### Solo poner las rutas que llevan a las paginas principales aqui #######
 
@@ -59,9 +70,79 @@ def recetas():
 def resultados():
     return render_template("public/Resultados.html")
 
+## Ruta de Prueba, Sera borrada posteriormente ## 
+@app.route('/pruebaupload', methods=['GET', 'POST'])
+def pruebaupload():
+    if request.method == 'POST':
+        uploaded_file = request.files['file']
+        if uploaded_file and uploaded_file.filename != '':
+            # Ensure the upload directory exists
+            if not os.path.exists(app.config['UPLOAD_PATH']):
+                os.makedirs(app.config['UPLOAD_PATH'])
+            
+            # Define your custom filename
+            numero = randint(1,1000)
+            id = current_user.id
+            nombrearchivo = (str(numero)+str(id))
+            custom_filename =  nombrearchivo  # Change this to your desired filename
+            file_extension = os.path.splitext(uploaded_file.filename)[1]  # Get the original file extension
+            new_filename = f"{custom_filename}{file_extension}"  # Combine custom name with the original extension
+            
+            # Save the file in the specified upload directory
+            file_path = os.path.join(app.config['UPLOAD_PATH'], secure_filename(new_filename))
+            uploaded_file.save(file_path)
+            flash("File uploaded successfully with custom name!", "success")
+        else:
+            flash("No file selected or invalid file.", "danger")
+        
+        return redirect(url_for('pruebaupload'))
+    
+    return render_template('public/pruebaupload.html')
 
-@app.route("/subir")
+
+@app.route("/subir", methods=["GET", "POST"])
+@login_required
 def subir():
+    if request.method == "POST":
+        img = request.files['imagen-receta']  
+        print(img)
+        nombre = request.form['titulo']
+        autor = request.form['autor']
+        cantidadpersonas = request.form['personas']
+        tiempo = request.form['tiempo']
+        dificultad = request.form['dificultad']
+        ingredientes = request.form['ingredientes']
+        tips = request.form['tips']
+        preparacion = request.form['preparacion']
+        
+
+
+        if img and img.filename != '':
+            # Ensure the upload directory exists
+            if not os.path.exists(app.config['UPLOAD_PATH']):
+                os.makedirs(app.config['UPLOAD_PATH'])
+            
+            # Nomeclatura de el nombre = Numero aleatorio entre 1 a 1000 + ID de el usuario que la subio
+
+            numero = randint(1,1000)
+            id = current_user.id
+            nombrearchivo = (str(numero)+str(id))
+            custom_filename =  nombrearchivo  # Change this to your desired filename
+            print (custom_filename)
+            file_extension = os.path.splitext(img.filename)[1]  # Get the original file extension
+            new_filename = f"{custom_filename}{file_extension}"  # Combine custom name with the original extension
+            
+            # Save the file in the specified upload directory
+            file_path = os.path.join(app.config['UPLOAD_PATH'], secure_filename(new_filename))
+            img.save(file_path)
+
+            Pagina = pagina(nombre, autor, cantidadpersonas, tiempo, dificultad, ingredientes, tips, preparacion, file_path, "Ruta", current_user.id, 0)
+            print (Pagina)
+            ModelPagina.agregar(db,Pagina)
+            
+        flash("Recipe uploaded successfully!", "success")
+        return redirect(url_for('Subir'))
+
     return render_template("public/Subir.html")
 
 
