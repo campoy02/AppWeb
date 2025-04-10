@@ -71,34 +71,13 @@ def resultados():
     return render_template("public/Resultados.html")
 
 ## Ruta de Prueba, Sera borrada posteriormente ## 
-@app.route('/pruebaupload', methods=['GET', 'POST'])
-def pruebaupload():
-    if request.method == 'POST':
-        uploaded_file = request.files['file']
-        if uploaded_file and uploaded_file.filename != '':
-            # Ensure the upload directory exists
-            if not os.path.exists(app.config['UPLOAD_PATH']):
-                os.makedirs(app.config['UPLOAD_PATH'])
-            
-            # Define your custom filename
-            numero = randint(1,1000)
-            id = current_user.id
-            nombrearchivo = (str(numero)+str(id))
-            custom_filename =  nombrearchivo  # Change this to your desired filename
-            file_extension = os.path.splitext(uploaded_file.filename)[1]  # Get the original file extension
-            new_filename = f"{custom_filename}{file_extension}"  # Combine custom name with the original extension
-            
-            # Save the file in the specified upload directory
-            file_path = os.path.join(app.config['UPLOAD_PATH'], secure_filename(new_filename))
-            uploaded_file.save(file_path)
-            flash("File uploaded successfully with custom name!", "success")
-        else:
-            flash("No file selected or invalid file.", "danger")
-        
-        return redirect(url_for('pruebaupload'))
-    
-    return render_template('public/pruebaupload.html')
+@app.route("/pruebaimg")
+def pruebaimg():
+    # Fetch the first recipe from the database
+        recetas = ModelPagina.obtenerrecetas(db)
+        print (recetas)
 
+        return render_template("public/pruebaimg.html", recetas = recetas)
 
 @app.route("/subir", methods=["GET", "POST"])
 @login_required
@@ -137,14 +116,18 @@ def subir():
             extension2 = os.path.splitext(img2.filename)[1]
             nombreimg2 = f"{nombrearchivo2}{extension2}"
 
-            # Save the file in the specified upload directory
+            # Para guardar las imagenes en el directorio
             file_path = os.path.join(app.config['UPLOAD_PATH'], secure_filename(new_filename))
             img.save(file_path)
 
             file_path2 = os.path.join(app.config["UPLOAD_PATH"],secure_filename(nombreimg2))
             img2.save(file_path2)
 
-            Pagina = pagina(0,nombre, autor, cantidadpersonas, tiempo, dificultad, ingredientes, tips, preparacion, file_path, file_path2, current_user.id, 0)
+            # Esta otra ruta es para que las pueda leer HTML
+            ruta1= f"../../static/uploads/"+new_filename
+            ruta2= f"../../static/uploads/"+nombreimg2
+
+            Pagina = pagina(0,nombre, autor, cantidadpersonas, tiempo, dificultad, ingredientes, tips, preparacion, ruta1, ruta2, current_user.id, 0)
             print (Pagina)
             ModelPagina.agregar(db,Pagina)
             

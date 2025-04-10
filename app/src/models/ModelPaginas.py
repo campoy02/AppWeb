@@ -15,3 +15,11 @@ class ModelPagina():
             return True
         except Exception as ex:
             raise Exception(ex)
+        
+    @classmethod
+    def obtenerrecetas(self, db):
+        cursor = db.connection.cursor()
+        cursor.execute("SELECT * FROM recetas ORDER BY idReceta")  # Adjust the query as needed
+        results = cursor.fetchall()  # Fetch all recipes
+        cursor.close()
+        return results  # Return the list of recipes

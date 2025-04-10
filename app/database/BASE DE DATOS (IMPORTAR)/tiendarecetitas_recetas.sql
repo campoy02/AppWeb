@@ -39,7 +39,7 @@ CREATE TABLE `recetas` (
   PRIMARY KEY (`idReceta`),
   KEY `idUser` (`idUser`),
   CONSTRAINT `recetas_ibfk_1` FOREIGN KEY (`idUser`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,7 +48,7 @@ CREATE TABLE `recetas` (
 
 LOCK TABLES `recetas` WRITE;
 /*!40000 ALTER TABLE `recetas` DISABLE KEYS */;
-INSERT INTO `recetas` VALUES (2,'Camote','Ary',22222,10,'Dificil','Dos millones de camotes','Camoteale bien','Agarras un camote y lo camoteas','','',2,NULL);
+INSERT INTO `recetas` VALUES (6,'Prueba','Ary',123,123,'Facil','123','123','123','../../static/uploads/123.jpg','../../static/uploads/123apoyo.jpg',3,0),(7,'Prueba2','Ary',2,2,'Facil','Prueba2','Segunda Prueba','Que chida prueba','../../static/uploads/4173.jpg','../../static/uploads/4173apoyo.jpg',3,0);
 /*!40000 ALTER TABLE `recetas` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -61,4 +61,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-10 15:28:48
+-- Dump completed on 2025-04-10 16:16:10
