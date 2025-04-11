@@ -1,7 +1,31 @@
 Las instrucciones para importar y utilizar la base de datos estan escritas asumiendo que el usuario utiliza
 MySQL Workbench para trabajar con la base de datos.
 
-Para crear el usuario
+
+Para crear el usuario: 
+1.-El primer paso para poder utilizar la base de datos es dar click en "+" en la seccion que dice "MySQL Connections"
+
+2.-Se abrira una interfaz, en "Connection Name" se puede colocar cualquier nombre 
+
+3.- Dejar tal como estan todos los otros campos y dar click a OK 
+
+4.- Se creará una conexión para el usuario root 
+
+5.- Entrar y en el recuadro izquierdo dar click en "Administration" 
+
+6.- Click en "Users and Privileges"
+
+7.- Se abrira una nueva pestaña, abajo a la izquierda dar click en "add account" 
+
+8.- En el campo "Login Name" Escribir Python
+
+9.- En el campo "Password" y "Confirm Password" escribir 123 
+
+10.- Ir a la pestaña "Administrative Roles" y hacer click en el recuadro "DBA"
+
+11.- Hacer click en "Apply" abajo a la derecha 
+
+Para crear la conexión: 
 
 1.-El primer paso para poder utilizar la base de datos es dar click en "+" en la seccion que dice "MySQL Connections"
 
@@ -18,6 +42,7 @@ Para crear el usuario
 7.-Ingresar a la base de datos a traves de el usuario creado 
 
 Para importar la base de datos que esta en la carpeta llamada BASE DE DATOS(Importar)
+
 1.-Una vez dentro, Click en Server 
 
 2.-Data Import 
