@@ -53,6 +53,10 @@ Para importar la base de datos que esta en la carpeta llamada BASE DE DATOS(Impo
 
 5.-En el recuadro izquierdo debe de aparecer un schema llamado "tiendarecetitas"
 
-6.-Click en Start Import 
+6.- En la seccion que dice "Default Targe Schema", dar click en el boton que dice "New..." 
 
-7.-La base de datos ya está importada, ya no es necesario mover nada
+7.- Se abrira una ventana con un campo de texto, Escribir tiendarecetitas en ella y click en OK 
+
+8.-Click en Start Import 
+
+9.-La base de datos ya está importada, ya no es necesario mover nada
