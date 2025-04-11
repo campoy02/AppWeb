@@ -59,4 +59,12 @@ Para importar la base de datos que esta en la carpeta llamada BASE DE DATOS(Impo
 
 8.-Click en Start Import 
 
-9.-La base de datos ya está importada, ya no es necesario mover nada
+9.-La base de datos ya está importada 
+
+10.- Dar click en file y seleccionar New Query Tab  
+
+11.- Copiar y Pegar el contenido de "Procedimientos.sql"  
+
+12.- Click en el boton del rayo 
+
+
