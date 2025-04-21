@@ -12,6 +12,7 @@ from models.ModelPaginas import ModelPagina
 from models.entities.pagina import pagina
 
 app = Flask(__name__)
+
 db = MySQL(app)
 login_manager_app = LoginManager(app)
 app.config['UPLOAD_PATH'] = 'app/src/static/uploads'
@@ -74,10 +75,9 @@ def resultados():
 @app.route("/pruebaimg")
 def pruebaimg():
     # Fetch the first recipe from the database
-        recetas = ModelPagina.obtenerrecetas(db)
-        print (recetas)
-
-        return render_template("public/pruebaimg.html", recetas = recetas)
+    recetas = ModelPagina.obtenerrecetas(db)
+    print(recetas)
+    return render_template("public/pruebaimg.html", recetas=recetas)
 
 @app.route("/subir", methods=["GET", "POST"])
 @login_required
@@ -94,8 +94,6 @@ def subir():
         ingredientes = request.form['ingredientes']
         tips = request.form['tips']
         preparacion = request.form['preparacion']
-        
-
 
         if img and img.filename and img2 and img2.filename != '':
             # Ensure the upload directory exists
@@ -103,12 +101,11 @@ def subir():
                 os.makedirs(app.config['UPLOAD_PATH'])
             
             # Nomeclatura de el nombre = Numero aleatorio entre 1 a 1000 + ID de el usuario que la subio
-
-            numero = randint(1,1000)
+            numero = randint(1, 1000)
             id = current_user.id
 
-            nombrearchivo = (str(numero)+str(id))
-            custom_filename =  nombrearchivo  # Change this to your desired filename
+            nombrearchivo = (str(numero) + str(id))
+            custom_filename = nombrearchivo  # Change this to your desired filename
             file_extension = os.path.splitext(img.filename)[1]  # Get the original file extension
             new_filename = f"{custom_filename}{file_extension}"  # Combine custom name with the original extension
             
@@ -120,16 +117,16 @@ def subir():
             file_path = os.path.join(app.config['UPLOAD_PATH'], secure_filename(new_filename))
             img.save(file_path)
 
-            file_path2 = os.path.join(app.config["UPLOAD_PATH"],secure_filename(nombreimg2))
+            file_path2 = os.path.join(app.config["UPLOAD_PATH"], secure_filename (nombreimg2))
             img2.save(file_path2)
 
             # Esta otra ruta es para que las pueda leer HTML
-            ruta1= f"../../static/uploads/"+new_filename
-            ruta2= f"../../static/uploads/"+nombreimg2
+            ruta1 = f"../../static/uploads/" + new_filename
+            ruta2 = f"../../static/uploads/" + nombreimg2
 
-            Pagina = pagina(0,nombre, autor, cantidadpersonas, tiempo, dificultad, ingredientes, tips, preparacion, ruta1, ruta2, current_user.id, 0)
-            print (Pagina)
-            ModelPagina.agregar(db,Pagina)
+            Pagina = pagina(0, nombre, autor, cantidadpersonas, tiempo, dificultad, ingredientes, tips, preparacion, ruta1, ruta2, current_user.id, 0)
+            print(Pagina)
+            ModelPagina.agregar(db, Pagina)
             
         flash("Recipe uploaded successfully!", "success")
         return redirect(url_for('subir'))
@@ -151,7 +148,7 @@ def logout():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-
+   
     if request.method == "POST":
         # Pa checar si es el formulario de registro
         if "RegNombre" in request.form:
@@ -173,7 +170,7 @@ def login():
                 login_user(logged_user)
 
                 if logged_user.usertype == 1:
-                    # Pendiente: Modificar el html de admin para que se vea decente, agregar panel de control
+   
                     flash("Bienvenido administrador", "success")
                     return redirect(url_for("admin"))
                 else:
@@ -195,7 +192,7 @@ def login():
 def admin_required(func):
     @wraps(func)
     def decorated_view(*args, **kwargs):
-        # Verificar si el usuario está autenticado y es un administrador
+        
         if not current_user.is_authenticated or current_user.usertype != 1:
             abort(403)  # Acceso prohibido
         return func(*args, **kwargs)
@@ -206,14 +203,29 @@ def admin_required(func):
 def load_user(id):
     return ModelUsers.get_by_id(db, id)
 
-# Cualquier ruta que requiera permisos de administrador debe de ir debajo de esta linea#
+# Rutas para administrar recetas
+@app.route("/admin/recetas")
+@admin_required
+@login_required
+def admin_recetas():
+    recetas = ModelPagina.obtenerrecetas(db)
+    return render_template("admin/recetas.html", recetas=recetas)
 
+@app.route("/admin/recetas/eliminar/<int:id>", methods=["POST"])
+@admin_required
+@login_required
+def eliminar_receta(id):
+    ModelPagina.eliminar(db, id)
+    flash("Receta eliminada exitosamente", "success")
+    return redirect(url_for("admin_recetas"))
 
 @app.route("/admin")
 @admin_required
 @login_required
 def admin():
     return render_template("admin/admin.html")
+
+
 
 ##############################################################################
 

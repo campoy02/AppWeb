@@ -5,4 +5,6 @@ class DevelopmentConfig:
     MYSQL_USER = "Python"
     MYSQL_PASSWORD = "123"
     MYSQL_DB = "tiendarecetitas"
+   
 config = {"development": DevelopmentConfig}
+
