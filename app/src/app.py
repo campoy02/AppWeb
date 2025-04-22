@@ -204,26 +204,21 @@ def load_user(id):
     return ModelUsers.get_by_id(db, id)
 
 # Rutas para administrar recetas
-@app.route("/admin/recetas")
+@app.route("/admin")
 @admin_required
 @login_required
-def admin_recetas():
+def admin():
     recetas = ModelPagina.obtenerrecetas(db)
     return render_template("admin/recetas.html", recetas=recetas)
 
-@app.route("/admin/recetas/eliminar/<int:id>", methods=["POST"])
+@app.route("/admin/eliminar/<int:id>", methods=["POST"])
 @admin_required
 @login_required
 def eliminar_receta(id):
     ModelPagina.eliminar(db, id)
     flash("Receta eliminada exitosamente", "success")
-    return redirect(url_for("admin_recetas"))
+    return redirect(url_for("admin"))
 
-@app.route("/admin")
-@admin_required
-@login_required
-def admin():
-    return render_template("admin/admin.html")
 
 
 
