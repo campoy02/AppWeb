@@ -1,4 +1,4 @@
-from .entities import pagina
+from .entities.pagina import pagina
 
 class ModelPagina:
     # Método para registrar nuevos usuarios
@@ -20,18 +20,30 @@ class ModelPagina:
     @classmethod
     def obtenerrecetas(cls, db):
         cursor = db.connection.cursor()
-        cursor.execute("SELECT * FROM recetas ORDER BY idReceta")  # Ajusta la consulta según sea necesario
-        results = cursor.fetchall()  # Fetch all recipes
+        cursor.execute("SELECT * FROM recetas ORDER BY idReceta")  
+        results = cursor.fetchall()  
         cursor.close()
-        return results  # Return the list of recipes
+        return results  
 
     @classmethod
     def eliminar(cls, db, id):
         try:
             cursor = db.connection.cursor()
-            cursor.execute("DELETE FROM recetas WHERE idReceta = %s", (id,))  # Asegúrate de que el nombre de la columna sea correcto
+            cursor.execute("DELETE FROM recetas WHERE idReceta = %s", (id,))  
             db.connection.commit()
             cursor.close()
             return True
         except Exception as ex:
             raise Exception(ex)
+    
+    # Para sacar informacion de una pagina en especifico
+    @classmethod
+    def RecetaPorID(cls,db, id):
+        cursor = db.connection.cursor()
+        cursor.execute("SELECT * FROM recetas where idReceta = %s", (id,))  
+        row = cursor.fetchone()
+        if row != None:
+            PaginaRe = pagina(row[0],row[1], row[2], row[3] ,row[4] ,row[5] ,row[6], row[7],row[8],row[9],row[10],row[11],row[12])
+            return PaginaRe
+        else: 
+            return None

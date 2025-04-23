@@ -1,0 +1,19 @@
+{% extends './base.html' %}
+
+{% block cuerpo %} 
+
+<div class="form-container sign-in-container">
+
+    <p> <h2> Nombre actual : </h2> </p>
+    <p><h2> {{usuario.fullname}} </h2></p>
+
+    <form action="{{ url_for('cambiarnombre') }}" class = "CambiarNombre" method="POST">
+      <h2 class="lobster">Actualizar Nombre</h2>
+      <input type="text" name="NuevoNom" placeholder="Nombre Nuevo" required />
+
+
+
+        <button type="submit">Actualizar Nombre</button>
+      </div>
+
+{% endblock %}

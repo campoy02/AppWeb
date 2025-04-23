@@ -52,3 +52,14 @@ class ModelUsers():
             return True
         except Exception as ex:
             raise Exception(ex)
+    
+    @classmethod
+    def actualizarnombre(cls,db,nom,id):
+        try:
+            cursor = db.connection.cursor()
+            cursor.execute("UPDATE users SET fullname = %s  WHERE id = %s",(nom, id))  
+            db.connection.commit()
+            cursor.close
+            return True
+        except Exception as ex:
+            raise Exception(ex)

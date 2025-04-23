@@ -59,12 +59,19 @@ def historial():
 @app.route("/perfil")
 @login_required
 def perfil():
-    return render_template("public/perfil.html")
+    return render_template("public/perfil.html", usuario = current_user)
 
-
+#Recordatorio de borrar esta ruta proximamente#
 @app.route("/recetas")
 def recetas():
     return render_template("public/Recetas.html")
+################################################
+#Ruta para cargar una receta con una ID especifica
+@app.route("/recetas/<int:id>")
+def recetasid(id):
+    PaginaRec = ModelPagina.RecetaPorID(db,id)
+    print (PaginaRec)
+    return render_template("public/RecetasID.html", receta = PaginaRec)
 
 
 @app.route("/resultados")
@@ -96,7 +103,7 @@ def subir():
         preparacion = request.form['preparacion']
 
         if img and img.filename and img2 and img2.filename != '':
-            # Ensure the upload directory exists
+
             if not os.path.exists(app.config['UPLOAD_PATH']):
                 os.makedirs(app.config['UPLOAD_PATH'])
             
@@ -133,6 +140,17 @@ def subir():
 
     return render_template("public/Subir.html")
 
+#Ruta para la pagina de cambiar nombres
+@app.route("/perfil/cambiarnombre", methods=["GET", "POST"]) 
+def cambiarnombre():
+
+    if request.method == "POST":
+        nuevonombre = request.form["NuevoNom"]
+        ModelUsers.actualizarnombre(db,nuevonombre,current_user.id)   
+
+        return redirect(url_for("cambiarnombre"))
+    else:
+        return render_template("public/CambiarNombre.html", usuario = current_user)
 
 @app.route("/tienda")
 def tienda():

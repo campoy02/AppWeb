@@ -1,6 +1,5 @@
 class pagina():
     def __init__(self, idReceta, nombre, autor, cantidadpersonas, tiempo, dificultad, ingredientes, tips, preparacion, rutaimg, rutaimgapoyo, idUser, estrellas) -> None:
-        self.id = id
         self.idReceta = idReceta
         self.nombre = nombre
         self.autor = autor
