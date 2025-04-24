@@ -73,6 +73,13 @@ def recetasid(id):
     print (PaginaRec)
     return render_template("public/RecetasID.html", receta = PaginaRec)
 
+@app.route("/votar", methods=["POST"])
+def votar():
+    estrellas = request.form.get("rating")
+    id = request.form.get("IDReceta")
+    ModelPagina.ActualizarVotos(db,estrellas, id)
+
+    return redirect(url_for("recetasid", id=id))
 
 @app.route("/resultados")
 def resultados():
@@ -131,7 +138,7 @@ def subir():
             ruta1 = f"../../static/uploads/" + new_filename
             ruta2 = f"../../static/uploads/" + nombreimg2
 
-            Pagina = pagina(0, nombre, autor, cantidadpersonas, tiempo, dificultad, ingredientes, tips, preparacion, ruta1, ruta2, current_user.id, 0)
+            Pagina = pagina(0, nombre, autor, cantidadpersonas, tiempo, dificultad, ingredientes, tips, preparacion, ruta1, ruta2, current_user.id, 0,0)
             print(Pagina)
             ModelPagina.agregar(db, Pagina)
             

@@ -36,9 +36,28 @@
 
     <div class="recipe-container">
         <div class="recipe-left">
-            <div class="rating">
-                <h3>Valoración: {{ receta.estrellas }} estrellas</h3>
+            <div class="rating-display">
+                {% if receta.votos_totales > 0 %}
+                    {% set average_rating = receta.estrellas / receta.votos_totales %}
+
+                    <p>Valoración: {{ average_rating | round(1) }} estrellas ({{ receta.votos_totales }} votos)</p>
+                {% else %}
+                    <p>Sin valoraciones aún.</p>
+                {% endif %}
             </div>
+
+            <form action="{{ url_for('votar') }}" method="POST">
+                <div class="star-rating">
+                    <button type="submit" name="rating" value="1" class="star">&#9733;</button>
+                    <button type="submit" name="rating" value="2" class="star">&#9733;</button>
+                    <button type="submit" name="rating" value="3" class="star">&#9733;</button>
+                    <button type="submit" name="rating" value="4" class="star">&#9733;</button>
+                    <button type="submit" name="rating" value="5" class="star">&#9733;</button>
+                    <p> </p>
+                </div>
+                <input type="hidden" name="IDReceta" value="{{ receta.idReceta }}">
+            </form>
+
             <div class="recipe-image">
                 <img src="{{ receta.rutaimg }}" alt="Imagen de la receta">
             </div>

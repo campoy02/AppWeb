@@ -43,7 +43,16 @@ class ModelPagina:
         cursor.execute("SELECT * FROM recetas where idReceta = %s", (id,))  
         row = cursor.fetchone()
         if row != None:
-            PaginaRe = pagina(row[0],row[1], row[2], row[3] ,row[4] ,row[5] ,row[6], row[7],row[8],row[9],row[10],row[11],row[12])
+            PaginaRe = pagina(row[0],row[1], row[2], row[3] ,row[4] ,row[5] ,row[6], row[7],row[8],row[9],row[10],row[11],row[12],row[13])
             return PaginaRe
         else: 
             return None
+        
+    @classmethod
+    def ActualizarVotos(cls,db,estrellas,id):
+        cursor = db.connection.cursor()
+        cursor.execute("UPDATE recetas SET estrellas = estrellas+%s WHERE idReceta = %s;", (estrellas,id))  
+        cursor.execute("UPDATE recetas SET votos_totales = votos_totales+1 WHERE idReceta = %s;", (id))  
+        db.connection.commit()
+        cursor.close
+        return True
