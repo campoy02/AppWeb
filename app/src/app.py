@@ -119,9 +119,9 @@ def subir():
             id = current_user.id
 
             nombrearchivo = (str(numero) + str(id))
-            custom_filename = nombrearchivo  # Change this to your desired filename
-            file_extension = os.path.splitext(img.filename)[1]  # Get the original file extension
-            new_filename = f"{custom_filename}{file_extension}"  # Combine custom name with the original extension
+            custom_filename = nombrearchivo  
+            file_extension = os.path.splitext(img.filename)[1]  
+            new_filename = f"{custom_filename}{file_extension}"  
             
             nombrearchivo2 = (nombrearchivo + "apoyo")
             extension2 = os.path.splitext(img2.filename)[1]
