@@ -17,12 +17,12 @@ DELIMITER ;
 
 DELIMITER //
 CREATE PROCEDURE sp_AddUser(IN pUserName VARCHAR(20), IN pPassword VARCHAR(102), IN pFullName
-VARCHAR(50), in pUserType tinyint)
+VARCHAR(50), in pUserType tinyint, IN pEmail varchar(100))
 BEGIN
 DECLARE hashedPassword VARCHAR(255);
 SET hashedPassword = SHA2(pPassword, 256); -- Utiliza SHA-256 para hashear la contraseña.
-INSERT INTO users (username, password, fullname, usertype )
-VALUES (pUserName, hashedPassword, pFullName, pUserType);
+INSERT INTO users (username, password, fullname, usertype, email )
+VALUES (pUserName, hashedPassword, pFullName, pUserType, pEmail);
 END //
 DELIMITER ;
 
