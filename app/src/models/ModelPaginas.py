@@ -52,7 +52,7 @@ class ModelPagina:
     def ActualizarVotos(cls,db,estrellas,id):
         cursor = db.connection.cursor()
         cursor.execute("UPDATE recetas SET estrellas = estrellas+%s WHERE idReceta = %s;", (estrellas,id))  
-        cursor.execute("UPDATE recetas SET votos_totales = votos_totales+1 WHERE idReceta = %s;", (id))  
+        cursor.execute("UPDATE recetas SET votos_totales = votos_totales+1 WHERE idReceta = %s;", (id,))  
         db.connection.commit()
         cursor.close
         return True
