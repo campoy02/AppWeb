@@ -60,10 +60,12 @@
               
               </div>
             <!-- Caja de búsqueda -->
-            <form class="d-flex search-box bg-white bg-opacity-90 p-2 rounded">
-                <input class="search-input form-control border-0 bg-transparent font-lobster fs-6" type="text" placeholder="Hey, ¿Listo para cocinar?" aria-label="Search">
-                <button class="search-btn btn btn-link text-dark fs-5 p-0" type="submit"> <a href="{{url_for('resultados')}}">🔍</a></button>
+            <form class="d-flex search-box bg-white bg-opacity-90 p-2 rounded" method="get" action="{{ url_for('resultados') }}">
+                <input class="search-input form-control border-0 bg-transparent font-lobster fs-6" type="text" name="q" placeholder="Hey, ¿Listo para cocinar?" aria-label="Search">
+                <button class="search-btn btn btn-link text-dark fs-5 p-0" type="submit">🔍</button>
             </form>
+            
+
         </div>
     </nav>
 
@@ -71,117 +73,19 @@
 
     <!-- Título de la página -->
     <section class="search-results">
-        <h1>Resultado para tus búsquedas</h1>
-        <div class="recipes-container">
-            <div class="recipe-card">
-                <a href="{{url_for('recetas')}}"><img src="../../static/img/filete.jpg" alt="Filete Asado"></a>
-                <div class="recipe-info">
-                    <h3>Filete Asado</h3>
-                    <p>Receta deliciosa de filete asado.</p>
-                </div>
-            </div>
-            <div class="recipe-card">
-                <a href="{{url_for('recetas')}}"><img src="../../static/img/lasaña.jpg" alt="Lasaña Clásica">
-                    <div class="recipe-info">
-                        <h3>Lasaña Clásica</h3>
-                        <p>Receta de lasaña tradicional.</p>
-                    </div>
-            </div>
-            <div class="recipe-card">
-                <a href="{{url_for('recetas')}}"></a><img src="../../static/img/ramen.jpg" alt="Ramen Clásico">
-                <div class="recipe-info">
-                    <h3>Ramen Clásico</h3>
-                    <p>Receta auténtica de ramen.</p>
-                </div>
-            </div>
-            <div class="recipe-card">
-                <img src="../../static/img/taco.jpg" alt="Tacos Mexicanos">
-                <div class="recipe-info">
-                    <h3>Tacos Mexicanos</h3>
-                    <p>Receta de tacos con carne.</p>
-                </div>
-            </div>
-
-            <div class="recipe-card">
-                <img src="../../static/img/frituras2.jpg" alt="Filete Asado">
-                <div class="recipe-info">
-                    <h3>Receta de frituras</h3>
-                    <p>Receta deliciosa de frituras asado.</p>
-                </div>
-            </div>
-            <div class="recipe-card">
-                <img src="../../static/img/bebidaD.jpg" alt="Lasaña Clásica">
-                <div class="recipe-info">
-                    <h3>Bebidas</h3>
-                    <p>Receta para bebidas</p>
-                </div>
-            </div>
-            <div class="recipe-card">
-                <img src="../../static/img/bebidaT.jpg" alt="Ramen Clásico">
-                <div class="recipe-info">
-                    <h3>Bebida fria</h3>
-                    <p>Receta para una bebida fria chocolate.</p>
-                </div>
-            </div>
-            <div class="recipe-card">
-                <img src="../../static/img/chilerelleno.jpeg" alt="Tacos Mexicanos">
-                <div class="recipe-info">
-                    <h3>Chiles rellenos Mexicanos</h3>
-                    <p>Receta de chiles rellenos con carne.</p>
-                </div>
-            </div>
-            <div class="recipe-card">
-                <img src="../../static/img/postre3.jpg" alt="Lasaña Clásica">
-                <div class="recipe-info">
-                    <h3>Postre de chocolate</h3>
-                    <p>Receta para postre de chocolate horneado.</p>
-                </div>
-            </div>
-            <div class="recipe-card">
-                <img src="../../static/img/postre4.jpg" alt="Ramen Clásico">
-                <div class="recipe-info">
-                    <h3>Postre dulce</h3>
-                    <p>Receta postre frio de temporada.</p>
-                </div>
-            </div>
-            <div class="recipe-card">
-                <img src="../../static/img/desayuno3.jpg" alt="Tacos Mexicanos">
-                <div class="recipe-info">
-                    <h3>Tacos Mexicanos</h3>
-                    <p>Receta de tacos con carne.</p>
-                </div>
-            </div>
-
-            <div class="recipe-card">
-                <img src="../../static/img/desayuno5.jpg" alt="Filete Asado">
-                <div class="recipe-info">
-                    <h3>Avenas</h3>
-                    <p>Receta para desayuno de avenas.</p>
-                </div>
-            </div>
-            <div class="recipe-card">
-                <img src="../../static/img/desayuno2.jpg" alt="Lasaña Clásica">
-                <div class="recipe-info">
-                    <h3>Desayuno nutritivo</h3>
-                    <p>Receta para desayuno vegano con frutas.</p>
-                </div>
-            </div>
-            <div class="recipe-card">
-                <img src="../../static/img/ramen.jpg" alt="Ramen Clásico">
-                <div class="recipe-info">
-                    <h3>Ramen Clásico</h3>
-                    <p>Receta auténtica de ramen.</p>
-                </div>
-            </div>
-            <div class="recipe-card">
-                <img src="../../static/img/taco.jpg" alt="Tacos Mexicanos">
-                <div class="recipe-info">
-                    <h3>Tacos Mexicanos</h3>
-                    <p>Receta de tacos con carne.</p>
-                </div>
-            </div>
-            <!-- Agrega más recetas aquí -->
-        </div>
+        <h2>Resultados de búsqueda para "{{ busqueda }}"</h2>
+        {% if resultados %}
+            <ul>
+                {% for receta in resultados %}
+                    <li>
+                        <a href="{{ url_for('recetasid', id=receta.idReceta) }}">{{ receta.nombre }}</a><br>
+                        Ingredientes: {{ receta.ingredientes }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No se encontraron recetas para tu búsqueda.</p>
+        {% endif %}
     </section>
 
 

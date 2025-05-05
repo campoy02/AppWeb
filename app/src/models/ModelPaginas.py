@@ -56,3 +56,25 @@ class ModelPagina:
         db.connection.commit()
         cursor.close
         return True
+    
+#Buscadorr
+    
+    @staticmethod
+    def buscar_recetas(db, termino):
+        try:
+            cursor = db.connection.cursor()
+            consulta = "SELECT * FROM recetas WHERE nombre LIKE %s OR ingredientes LIKE %s"
+            patron = f"%{termino.lower()}%"
+            cursor.execute(consulta, (patron, patron))
+            filas = cursor.fetchall()
+
+            # Obtener nombres de columnas para construir diccionarios
+            columnas = [col[0] for col in cursor.description]
+            recetas = []
+            for fila in filas:
+                receta = dict(zip(columnas, fila))
+                recetas.append(receta)
+            return recetas
+        except Exception as ex:
+            print("Error al buscar recetas:", ex)
+            return []

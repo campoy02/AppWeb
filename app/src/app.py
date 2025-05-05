@@ -81,9 +81,14 @@ def votar():
 
     return redirect(url_for("recetasid", id=id))
 
-@app.route("/resultados")
+# Buscador 
+
+@app.route("/resultados", methods=["GET"])
 def resultados():
-    return render_template("public/Resultados.html")
+    query = request.args.get("q", "").strip()
+    resultados = ModelPagina.buscar_recetas(db, query)
+    return render_template("public/Resultados.html", resultados=resultados, busqueda=query)
+
 
 ## Ruta de Prueba, Sera borrada posteriormente ## 
 @app.route("/pruebaimg")
@@ -210,6 +215,8 @@ def login():
 ##############################################################################
 
 ##               El resto del desmadre ponerlo aqui                         ##
+
+
 
 ## Funcion para validar que el usuario sea admin, se utiliza en las rutas que necesiten acceso de admin ##
 
