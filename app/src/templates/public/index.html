@@ -46,53 +46,49 @@
 
 <body>
 
-    <!-- Header -->
-    <header class="header position-relative w-100 overflow-hidden" style="height: 300px;">
-        <div class="banner position-relative w-100 h-100">
-            <!-- Título -->
-            <h1
-                class="title position-absolute top-0 start-50 translate-middle-x fs-1 fw-bold font-lobster text-center text-brown bg-white bg-opacity-30 p-2 rounded d-flex align-items-center gap-2">
-                Recetitas <span>Blog</span>
-            </h1>
-            <!-- Logo -->
-            <img src="../../static/img/logo.png" alt="Logo Recetitas" class="logo position-absolute top-0 end-0 m-2"
-                style="width: 60px; opacity: 0.8; border-radius: 20%; background: rgba(255, 255, 255, 0.5); padding: 5px;">
+  <!-- Header -->
+  <header class="header position-relative w-100 overflow-hidden">
+    <div class="banner position-relative w-100 h-100">
+        <!-- Título -->
+        <h1
+            class="title position-absolute top-0 start-50 translate-middle-x fs-1 fw-bold font-lobster text-center text-brown bg-white bg-opacity-30 p-2 rounded d-flex align-items-center gap-2">
+            Recetitas <span>Blog</span>
+        </h1>
+        <!-- Logo -->
+        <img src="../../static/img/logo.png" alt="Logo Recetitas" class="logo position-absolute top-0 end-0 m-2">
+    </div>
+</header>
+
+     <!-- Barra de navegación -->
+     <nav class="nav-bar navbar navbar-expand-lg navbar-light bg-brown py-3">
+        <div class="container-fluid">
+            <!-- Enlaces de navegación -->
+            <div class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <a class="nav-btn" href="{{ url_for('index') }}">Inicio</a>
+              
+                <div class="dropdown">
+                  <a class="nav-btn dropdown-toggle" href="#" role="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    Mi Perfil
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="{{ url_for('perfil') }}">Mi Perfil</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('favoritos') }}">Favoritos</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('historial') }}">Historial</a></li>
+                  </ul>
+                </div>
+              
+                <a class="nav-btn" href="{{ url_for('subir') }}">Subir Receta</a>
+                <a class="nav-btn" href="{{ url_for('tienda') }}">Tienda Oficial</a>
+                <a class="nav-btn" href="{{ url_for('login') }}">Iniciar Sesion</a>
+                <a class="nav-btn" href="{{ url_for('resultados') }}">Buscador</a>
+              
+              </div>
+            <!-- Caja de búsqueda -->
+
+            </form>
         </div>
-    </header>
-        <!-- Barra de navegación -->
-        <nav class="nav-bar navbar navbar-expand-lg navbar-light bg-brown py-3">
-            <div class="container-fluid">
-                <!-- Enlaces de navegación -->
-                 
-                <div class="navbar-nav me-auto mb-2 mb-lg-0">
-  
-                    <a class="nav-btn" href="{{ url_for('index') }}">Inicio</a>
-                  
-                    <div class="dropdown">
-                      <a class="nav-btn dropdown-toggle" href="#" role="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                        Mi Perfil
-                      </a>
-                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="{{ url_for('perfil') }}">Mi Perfil</a></li>
-                        <li><a class="dropdown-item" href="{{ url_for('favoritos') }}">Favoritos</a></li>
-                        <li><a class="dropdown-item" href="{{ url_for('historial') }}">Historial</a></li>
-                      </ul>
-                    </div>
-                  
-                    <a class="nav-btn" href="{{ url_for('subir') }}">Subir Receta</a>
-                    <a class="nav-btn" href="{{ url_for('tienda') }}">Tienda Oficial</a>
-                    <a class="nav-btn" href="{{ url_for('login') }}">Registrarse</a>
-                  
-                  </div>
-                  
-                <!-- Caja de búsqueda -->
-                <form class="d-flex search-box bg-white bg-opacity-90 p-2 rounded" method="get" action="{{ url_for('resultados') }}">
-                    <input class="search-input form-control border-0 bg-transparent font-lobster fs-6" type="text" name="q" placeholder="Hey, ¿Listo para cocinar?" aria-label="Search">
-                    <button class="search-btn btn btn-link text-dark fs-5 p-0" type="submit">🔍</button>
-                </form>
-                
-            </div>
-        </nav>
+    </nav>
 
     <section class="hero-section">
         <div class="hero-content">

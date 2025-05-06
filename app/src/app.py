@@ -130,6 +130,11 @@ def subir():
             #Favor de actualizar los comentarios en caso de cambiar alguno de estos limites
             TMAX = 5 * 1024 * 1024 #Tamaño maximo actual: 7MB por imagen
             RMAX = (1500,1200) #Resolucion maxima actual:  1000x1200 
+
+            if img.content_length > TMAX or img2.content_length > TMAX:
+                flash("Una de las imagenes excede los 5MB, Favor de ingresar un archivo mas ligero")
+                return redirect(url_for('subir'))
+
                             
             # Nomeclatura de el nombre = Numero aleatorio entre 1 a 1000 + ID de el usuario que la subio
             numero = randint(1, 1000)
@@ -150,9 +155,6 @@ def subir():
             img_pil.thumbnail(RMAX)
             img_pil2.thumbnail(RMAX)
 
-            if img_pil.content_length > TMAX or img_pil2.content_length > TMAX:
-                flash("Una de las imagenes excede los 5MB, Favor de ingresar un archivo mas ligero")
-                return redirect(url_for('subir'))
 
             # Ruta desde root para guardar las imagenes en uploads
             file_path = os.path.join(app.config['UPLOAD_PATH'], secure_filename(new_filename))
