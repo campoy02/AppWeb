@@ -63,7 +63,9 @@
                   
                   </div>
                 <!-- Caja de búsqueda -->
-
+                <p class = "Bienvenida">{% if current_user.is_authenticated %}
+                    Bienvenido, {{ current_user.username }}!
+                    {% endif %} </p>
                 </form>
             </div>
         </nav>

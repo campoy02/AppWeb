@@ -59,8 +59,8 @@ class ModelPagina:
     
 #Buscadorr
     
-    @staticmethod
-    def buscar_recetas(db, termino):
+    @classmethod
+    def buscar_recetas(cls,db, termino):
         try:
             cursor = db.connection.cursor()
             consulta = "SELECT * FROM recetas WHERE nombre LIKE %s OR ingredientes LIKE %s"

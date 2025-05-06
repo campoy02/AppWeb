@@ -9,69 +9,75 @@
 
 {% block cuerpo %}
 <div class="login-wrapper">
-<div class="container" id="container">
+    <div class="container" id="container">
 
-  <!-- Registro -->
-  <div class="form-container sign-up-container">
-    <form action="/login" class = "registrar" method="POST">
-      <h1 class="lobster">Crear cuenta</h1>
-      <input type="text" name="RegNombre" placeholder="Nombre de Usuario" required />
-      <input type="text" name="RegNCom" placeholder="Nombre Completo" required />
-      <input type="email" name="RegMail" placeholder="Correo" required />
-      <div class="password-wrapper">
-        <input type="password" name="RegPass" id="register-password" placeholder="Contraseña" required />
-        <span class="toggle-password" onclick="togglePassword('register-password', this)">👁️</span>
-      </div>
-      
-      
-      <button type="submit">Registrarse</button>
-    </form>
-  </div>
+        {% if current_user.is_authenticated %}
+            <!-- User is logged in -->
+            <div class="logged-in-message">
+                <h2>Actualmente en sesión como: {{ current_user.username }}</h2>
+                <form action="/logout" method="POST">
+                  <a class="btn btn-danger" href="{{ url_for('logout') }}" >LogOut</a>
+                </form>
+            </div>
+        {% else %}
+            <!-- Registro -->
+            <div class="form-container sign-up-container">
+                <form action="/login" class="registrar" method="POST">
+                    <h1 class="lobster">Crear cuenta</h1>
+                    <input type="text" name="RegNombre" placeholder="Nombre de Usuario" required />
+                    <input type="text" name="RegNCom" placeholder="Nombre Completo" required />
+                    <input type="email" name="RegMail" placeholder="Correo" required />
+                    <div class="password-wrapper">
+                        <input type="password" name="RegPass" id="register-password" placeholder="Contraseña" required />
+                        <span class="toggle-password" onclick="togglePassword('register-password', this)">👁️</span>
+                    </div>
+                    <button type="submit">Registrarse</button>
+                </form>
+            </div>
 
-  <!-- Login -->
-  <div class="form-container sign-in-container">
-    <form action="/login" class = "login" method="POST">
-      <h1 class="lobster">Iniciar sesión</h1>
-      <input type="text" name="username" placeholder="Usuario" required />
-      <div class="password-wrapper">
-        <input type="password" name="password" id="login-password" placeholder="Contraseña" required />
-        <span class="toggle-password" onclick="togglePassword('login-password', this)">👁️</span>
-      </div>
-      
-      
-      <a href="#">¿Olvidaste tu contraseña?</a>
-      <button type="submit">Ingresar</button>
-    </form>
-  </div>
+            <!-- Login -->
+            <div class="form-container sign-in-container">
+                <form action="/login" class="login" method="POST">
+                    <h1 class="lobster">Iniciar sesión</h1>
+                    <input type="text" name="username" placeholder="Usuario" required />
+                    <div class="password-wrapper">
+                        <input type="password" name="password" id="login-password" placeholder="Contraseña" required />
+                        <span class="toggle-password" onclick="togglePassword('login-password', this)">👁️</span>
+                    </div>
+                    <a href="#">¿Olvidaste tu contraseña?</a>
+                    <button type="submit">Ingresar</button>
+                </form>
+            </div>
+        {% endif %}
 
-  <!-- Panel de animación -->
-  <div class="overlay-container">
-    <div class="overlay">
-      <div class="overlay-panel overlay-left">
-        <h1 class="lobster">¡Bienvenido de nuevo!</h1>
-        <p>Ingresa con tus datos para continuar disfrutando del blog</p>
-        <button class="ghost" id="signIn">Iniciar sesión</button>
-      </div>
-      <div class="overlay-panel overlay-right">
-        <h1 class="lobster">¿Eres nuevo por aqui?</h1>
-        <p>Regístrate para empezar a compartir tus mejores recetas</p>
-        <button class="ghost" id="signUp">Registrarse</button>
-      </div>
+        <!-- Panel de animación -->
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1 class="lobster">¡Bienvenido de nuevo!</h1>
+                    <p>Ingresa con tus datos para continuar disfrutando del blog</p>
+                    <button class="ghost" id="signIn">Iniciar sesión</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1 class="lobster">¿Eres nuevo por aquí?</h1>
+                    <p>Regístrate para empezar a compartir tus mejores recetas</p>
+                    <button class="ghost" id="signUp">Registrarse</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 </div>
 
-  <!-- Mensajes Flash -->
-  {% with messages = get_flashed_messages(with_categories=true) %}
+<!-- Mensajes Flash -->
+{% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
-      <ul>
-        {% for category, message in messages %}
-          <li class="alert alert-{{ category }}">{{ message }}</li>
-        {% endfor %}
-      </ul>
+        <ul>
+            {% for category, message in messages %}
+                <li class="alert alert-{{ category }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
     {% endif %}
-  {% endwith %}
-  
+{% endwith %}
+
 <script src="{{ url_for('static', filename='js/login.js') }}"></script>
 {% endblock %}
