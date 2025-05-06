@@ -271,9 +271,28 @@ def admin():
 @admin_required
 @login_required
 def eliminar_receta(id):
-    ModelPagina.eliminar(db, id)
-    flash("Receta eliminada exitosamente", "success")
+    receta = ModelPagina.RecetaPorID(db, id) 
+    if receta:
+
+        Ruta1 = receta.rutaimg  
+        Ruta2 = receta.rutaimgapoyo  
+       
+        RutaFull1 = os.path.join(app.config['UPLOAD_PATH'], os.path.basename(Ruta1))
+        RutaFull2 = os.path.join(app.config['UPLOAD_PATH'], os.path.basename(Ruta2))
+
+        ModelPagina.eliminar(db, id)
+        flash("Receta eliminada exitosamente", "success")
+
+        try:
+            if os.path.exists(RutaFull1):
+                os.remove(RutaFull1)
+            if os.path.exists(RutaFull2):
+                os.remove(RutaFull2)
+                
+        except Exception as e:
+            flash(f"Error al eliminar las imágenes: {str(e)}", "danger")
     return redirect(url_for("admin"))
+
 
 
 
