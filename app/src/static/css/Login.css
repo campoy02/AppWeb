@@ -9,6 +9,24 @@ body {
   color: #000;
 }
 
+.logged-in-message {
+  font-family: 'Lobster', cursive;
+  color: #5E3119;
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.logged-in-message h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.logged-in-message .btn {
+  font-size: 1.25rem; /* Larger font size */
+  padding: 0.75rem 2rem; /* Bigger button padding */
+}
+
 /* ==== CONTENEDOR GENERAL ==== */
 .login-wrapper {
     margin-top: 50px;         /* <-- crea el espacio deseado */
