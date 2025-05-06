@@ -1,10 +1,19 @@
+#Para Manejo de Archivos (Ver ruta de "/Subir")
 import os
+#Numeros aleatorios (Ver la ruta de "/subir")
 from random import randint
-from flask import Flask, abort, flash, redirect, request, render_template, url_for
+#Para "Sanitizar" los nombres de archivo, evitar caracteres problematicos (Ver la ruta de "/subir")
 from werkzeug.utils import secure_filename
-from flask_login import LoginManager, login_user, logout_user, login_required, current_user
-from functools import wraps
+#Para reducir la resolucion de la imagen (Ver la ruta "/subir")
+#Efectivamente, tuve que importar como 4 cosas para una sola ruta xd
+from PIL import Image
+#Cosas del flask
+from flask import Flask, abort, flash, redirect, request, render_template, url_for
 from flask_mysqldb import MySQL
+from flask_login import LoginManager, login_user, logout_user, login_required, current_user
+#Para los decoradores (Ver funcion de Admin Requiered)
+from functools import wraps
+#Modulos propios  
 from Config import config
 from models.ModelUsers import ModelUsers
 from models.entities.users import User
@@ -118,7 +127,10 @@ def subir():
 
             if not os.path.exists(app.config['UPLOAD_PATH']):
                 os.makedirs(app.config['UPLOAD_PATH'])
-            
+            #Favor de actualizar los comentarios en caso de cambiar alguno de estos limites
+            TMAX = 5 * 1024 * 1024 #Tamaño maximo actual: 7MB por imagen
+            RMAX = (1500,1200) #Resolucion maxima actual:  1000x1200 
+                            
             # Nomeclatura de el nombre = Numero aleatorio entre 1 a 1000 + ID de el usuario que la subio
             numero = randint(1, 1000)
             id = current_user.id
@@ -132,14 +144,24 @@ def subir():
             extension2 = os.path.splitext(img2.filename)[1]
             nombreimg2 = f"{nombrearchivo2}{extension2}"
 
-            # Para guardar las imagenes en el directorio
+            img_pil = Image.open(img)
+            img_pil2 = Image.open(img2) 
+
+            img_pil.thumbnail(RMAX)
+            img_pil2.thumbnail(RMAX)
+
+            if img_pil.content_length > TMAX or img_pil2.content_length > TMAX:
+                flash("Una de las imagenes excede los 5MB, Favor de ingresar un archivo mas ligero")
+                return redirect(url_for('subir'))
+
+            # Ruta desde root para guardar las imagenes en uploads
             file_path = os.path.join(app.config['UPLOAD_PATH'], secure_filename(new_filename))
-            img.save(file_path)
+            img_pil.save(file_path)
 
             file_path2 = os.path.join(app.config["UPLOAD_PATH"], secure_filename (nombreimg2))
-            img2.save(file_path2)
+            img_pil2.save(file_path2)
 
-            # Esta otra ruta es para que las pueda leer HTML
+            # Ruta para que los HTML la puedan referencias
             ruta1 = f"../../static/uploads/" + new_filename
             ruta2 = f"../../static/uploads/" + nombreimg2
 
