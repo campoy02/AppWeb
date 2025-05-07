@@ -45,12 +45,6 @@ def index():
 def inicio():
     return render_template("public/index.html")
 
-
-@app.route("/camiseta")
-def camiseta():
-    return render_template("public/Camiseta.html")
-
-
 @app.route("/favoritos")
 def favoritos():
     return render_template("public/Favoritos.html")
@@ -200,11 +194,6 @@ def cambiarnombre():
         return redirect(url_for("cambiarnombre"))
     else:
         return render_template("public/CambiarNombre.html", usuario=current_user)
-
-
-@app.route("/tienda")
-def tienda():
-    return render_template("public/tienda.html")
 
 
 @app.route("/logout")
