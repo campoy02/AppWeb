@@ -1,3 +1,12 @@
+Este proyecto presenta una Aplicación Web para el sitio "Recetitas", El cual es un blog en donde los usuarios pueden subir recetas propias y pueden explorar recetas hechas por otros usuarios
+En su estado actual, Este proyecto presenta las siguientes funciones: 
+1.- Sistema de inicio de sesión y registro para nuevos usuarios 
+2.- Panel de control para administradores donde es posible eliminar el contenido creado por usuarios
+3.- Formulario para que los usuarios suban recetas propias 
+4.- Sistema para buscar recetas 
+5.- Páginas de recetas generadas dinámicamente en base a la entrada de los usuarios
+6.- Actualización de nombre (Full name) de usuario
+
 Para el correcto funcionamento de la aplicacion web es necesario cumplir con requisitos previos
 Este archivo esta escrito considerando que se está utilizando MySQL Workbench y Visual Studio Code para manipular la BDD y el código respectivamente.
 
