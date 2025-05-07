@@ -59,13 +59,14 @@
                   
                     <a class="nav-btn" href="{{ url_for('subir') }}">Subir Receta</a>
                     <a class="nav-btn" href="{{ url_for('tienda') }}">Tienda Oficial</a>
-                    <a class="nav-btn" href="{{ url_for('login') }}">Registrarse</a>
+                    <a class="nav-btn" href="{{ url_for('login') }}">Iniciar Sesion</a>
+                    <a class="nav-btn" href="{{ url_for('resultados') }}">Buscador</a>
                   
                   </div>
                 <!-- Caja de búsqueda -->
-                <form class="d-flex search-box bg-white bg-opacity-90 p-2 rounded">
-                    <input class="search-input form-control border-0 bg-transparent font-lobster fs-6" type="text" placeholder="Hey, ¿Listo para cocinar?" aria-label="Search">
-                    <button class="search-btn btn btn-link text-dark fs-5 p-0" type="submit"> <a href="{{url_for('resultados')}}">🔍</a></button>
+                <p class = "Bienvenida">{% if current_user.is_authenticated %}
+                    Bienvenido, {{ current_user.username }}!
+                    {% endif %} </p>
                 </form>
             </div>
         </nav>
