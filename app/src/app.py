@@ -128,7 +128,7 @@ def subir():
             if not os.path.exists(app.config['UPLOAD_PATH']):
                 os.makedirs(app.config['UPLOAD_PATH'])
             #Favor de actualizar los comentarios en caso de cambiar alguno de estos limites
-            TMAX = 5 * 1024 * 1024 #Tamaño maximo actual: 7MB por imagen
+            TMAX = 5 * 1024 * 1024 #Tamaño maximo actual: 5MB por imagen
             RMAX = (1500,1200) #Resolucion maxima actual:  1000x1200 
 
             if img.content_length > TMAX or img2.content_length > TMAX:
