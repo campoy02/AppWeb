@@ -19,6 +19,7 @@ pip install flask
 pip install flask_login
 pip install flask_mysqldb
 pip install functools
+pip install pillow
 
 -En caso de que siga sin funcionar, Cerrar y abrir Visual Studio
 Posteriormente, abrir una nueva terminal y escribir los comandos de "pip install" de nuevo 
