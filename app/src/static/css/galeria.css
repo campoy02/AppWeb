@@ -119,3 +119,116 @@ body {
 .search-btn:hover {
     background-color: #e67e22;
 }
+
+.search-results {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.search-results h2 {
+    font-size: 1.8rem;
+    color: #4a2e20;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.tarjeta-receta-horizontal {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e2c6b2;
+    border-radius: 12px;
+    padding: 1rem;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    margin: 1.2rem auto;
+    max-width: 750px;
+}
+
+.imagen-receta {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.linea-vertical {
+    width: 2px;
+    height: 80%;
+    background-color: #a97a60;
+    margin: 0 1rem;
+}
+
+.contenido-receta {
+    flex-grow: 1;
+}
+
+.titulo-receta {
+    font-family: 'Lobster', cursive;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #3e1f0f;
+}
+
+.ver-receta {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.ver-receta:hover {
+    text-decoration: underline;
+}
+
+
+.tarjetas-contenedor {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.tarjeta-receta {
+    display: flex;
+    gap: 1rem;
+    border: 1px solid #e2c6b2;
+    border-radius: 12px;
+    background: #fff;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    align-items: center;
+}
+
+.tarjeta-receta img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.contenido-receta {
+    flex-grow: 1;
+}
+
+.contenido-receta h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #4a2e20;
+}
+
+.contenido-receta p {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.contenido-receta a.ver-receta {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contenido-receta a.ver-receta:hover {
+    text-decoration: underline;
+}

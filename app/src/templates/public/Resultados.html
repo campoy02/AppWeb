@@ -40,31 +40,34 @@
         <div class="container-fluid">
             <!-- Enlaces de navegación -->
             <div class="navbar-nav me-auto mb-2 mb-lg-0">
-  
+
                 <a class="nav-btn" href="{{ url_for('index') }}">Inicio</a>
-              
+
                 <div class="dropdown">
-                  <a class="nav-btn dropdown-toggle" href="#" role="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                    Mi Perfil
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="{{ url_for('perfil') }}">Mi Perfil</a></li>
-                    <li><a class="dropdown-item" href="{{ url_for('favoritos') }}">Favoritos</a></li>
-                    <li><a class="dropdown-item" href="{{ url_for('historial') }}">Historial</a></li>
-                  </ul>
+                    <a class="nav-btn dropdown-toggle" href="#" role="button" id="navbarDropdown"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Mi Perfil
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="{{ url_for('perfil') }}">Mi Perfil</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('favoritos') }}">Favoritos</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('historial') }}">Historial</a></li>
+                    </ul>
                 </div>
-              
+
                 <a class="nav-btn" href="{{ url_for('subir') }}">Subir Receta</a>
                 <a class="nav-btn" href="{{ url_for('tienda') }}">Tienda Oficial</a>
                 <a class="nav-btn" href="{{ url_for('login') }}">Registrarse</a>
-              
-              </div>
+
+            </div>
             <!-- Caja de búsqueda -->
-            <form class="d-flex search-box bg-white bg-opacity-90 p-2 rounded" method="get" action="{{ url_for('resultados') }}">
-                <input class="search-input form-control border-0 bg-transparent font-lobster fs-6" type="text" name="q" placeholder="Hey, ¿Listo para cocinar?" aria-label="Search">
+            <form class="d-flex search-box bg-white bg-opacity-90 p-2 rounded" method="get"
+                action="{{ url_for('resultados') }}">
+                <input class="search-input form-control border-0 bg-transparent font-lobster fs-6" type="text" name="q"
+                    placeholder="Hey, ¿Listo para cocinar?" aria-label="Search">
                 <button class="search-btn btn btn-link text-dark fs-5 p-0" type="submit">🔍</button>
             </form>
-            
+
 
         </div>
     </nav>
@@ -73,18 +76,23 @@
 
     <!-- Título de la página -->
     <section class="search-results">
-        <h2>Resultados de búsqueda para "{{ busqueda }}"</h2>
+        <h2>Resultados de búsqueda para “{{ busqueda }}”</h2>
         {% if resultados %}
-            <ul>
-                {% for receta in resultados %}
-                    <li>
-                        <a href="{{ url_for('recetasid', id=receta.idReceta) }}">{{ receta.nombre }}</a><br>
-                        Ingredientes: {{ receta.ingredientes }}
-                    </li>
-                {% endfor %}
-            </ul>
+        <div class="tarjetas-contenedor">
+            {% for receta in resultados %}
+            <div class="tarjeta-receta-horizontal">
+                <img class="imagen-receta" src="{{ receta.rutaimg }}" alt="{{ receta.nombre }}">
+                <div class="linea-vertical"></div>
+                <div class="contenido-receta">
+                    <h3 class="titulo-receta">{{ receta.nombre }}</h3>
+                    <p>Ingredientes: {{ receta.ingredientes }}</p>
+                    <a class="ver-receta" href="{{ url_for('recetasid', id=receta.idReceta) }}">Ver receta completa</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
         {% else %}
-            <p>No se encontraron recetas para tu búsqueda.</p>
+        <p>No se encontraron recetas para tu búsqueda.</p>
         {% endif %}
     </section>
 
@@ -114,7 +122,8 @@
             <p>Encuéntranos en:</p>
             <p>Río Pantitlán 4632, Colonia Américas 25843, Méxicali, Baja California, México.</p>
             <p>Contacto: +52 686 323 7433</p>
-            <p><a class="HipertextoFooter" href="{{url_for('formulario')}}">Manda un mensaje a los desarrolladores</a></p>
+            <p><a class="HipertextoFooter" href="{{url_for('formulario')}}">Manda un mensaje a los desarrolladores</a>
+            </p>
         </div>
     </footer>
 
