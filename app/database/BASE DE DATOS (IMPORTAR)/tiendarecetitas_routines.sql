@@ -28,14 +28,13 @@
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=root@localhost PROCEDURE sp_AddUser(IN pUserName VARCHAR(20), IN pPassword VARCHAR(102), IN pFullName
-VARCHAR(50), in pUserType tinyint, IN pEmail varchar(100))
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_AddReceta`(
+IN pnombre text, IN pautor text, IN pcantidadpersonas int, ptiempo int, pdificultad varchar(25), pingredientes text, ptips text, ppreparacion text, prutaimg text, prutaimgapoyo text, pidUser smallint unsigned, pestrellas int
+)
 BEGIN
-DECLARE hashedPassword VARCHAR(255);
-SET hashedPassword = SHA2(pPassword, 256); -- Utiliza SHA-256 para hashear la contraseña.
-INSERT INTO users (username, password, fullname, usertype, email )
-VALUES (pUserName, hashedPassword, pFullName, pUserType, pEmail);
-END
+INSERT INTO recetas (nombre, autor, cantidadpersonas, tiempo, dificultad, ingredientes, tips, preparacion, rutaimg, rutaimgapoyo, idUser, estrellas)
+VALUES (pnombre, pautor, pcantidadpersonas, ptiempo, pdificultad, pingredientes, ptips, ppreparacion, prutaimg, prutaimgapoyo, pidUser, pestrellas);
+END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -52,12 +51,12 @@ DELIMITER ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_AddUser`(IN pUserName VARCHAR(20), IN pPassword VARCHAR(102), IN pFullName
-VARCHAR(50), in pUserType tinyint)
+VARCHAR(50), in pUserType tinyint, IN pEmail varchar(100))
 BEGIN
 DECLARE hashedPassword VARCHAR(255);
 SET hashedPassword = SHA2(pPassword, 256); -- Utiliza SHA-256 para hashear la contraseña.
-INSERT INTO users (username, password, fullname, usertype )
-VALUES (pUserName, hashedPassword, pFullName, pUserType);
+INSERT INTO users (username, password, fullname, usertype, email )
+VALUES (pUserName, hashedPassword, pFullName, pUserType, pEmail);
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -101,4 +100,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-24 14:31:41
+-- Dump completed on 2025-05-06 19:19:05
