@@ -61,8 +61,6 @@ def historial():
 def perfil():
     return render_template("public/perfil.html", usuario=current_user)
 
-# Recordatorio de borrar esta ruta proximamente#
-
 
 @app.route("/recetas")
 def recetas():
